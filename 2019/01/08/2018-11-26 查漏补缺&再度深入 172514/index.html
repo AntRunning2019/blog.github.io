@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>C语言查漏补缺&amp;再度深入 | RunnningAnt·黛玛</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="web, web前端,PHP,Javascript, 乒乓球, 书法, 编程">
+  
+  <meta name="description" content="查漏补缺&amp;amp;再度深入 一、 字符输入输出函数–getchar/putchar getchar 函数的功能是从键盘输入一个字符，其一般形式为getchar（）；  通常把输入的字符赋予一个字符变量。 12char c;c=getchar();  putchar 函数是字符输出函数，其功能为在显示器上输出单个字符，一般形式为putchar(字符变量);  123putchar(&apos;A&apos;);putc">
+<meta name="keywords" content="C语言,编程,函数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言查漏补缺&amp;再度深入">
+<meta property="og:url" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-11-26 查漏补缺&再度深入 172514/index.html">
+<meta property="og:site_name" content="RunnningAnt·黛玛">
+<meta property="og:description" content="查漏补缺&amp;amp;再度深入 一、 字符输入输出函数–getchar/putchar getchar 函数的功能是从键盘输入一个字符，其一般形式为getchar（）；  通常把输入的字符赋予一个字符变量。 12char c;c=getchar();  putchar 函数是字符输出函数，其功能为在显示器上输出单个字符，一般形式为putchar(字符变量);  123putchar(&apos;A&apos;);putc">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-10T08:50:51.330Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="C语言查漏补缺&amp;再度深入">
+<meta name="twitter:description" content="查漏补缺&amp;amp;再度深入 一、 字符输入输出函数–getchar/putchar getchar 函数的功能是从键盘输入一个字符，其一般形式为getchar（）；  通常把输入的字符赋予一个字符变量。 12char c;c=getchar();  putchar 函数是字符输出函数，其功能为在显示器上输出单个字符，一般形式为putchar(字符变量);  123putchar(&apos;A&apos;);putc">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog.github.io/css/style.css">
+  <script src="/blog.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/blog.github.io/" class="left">
+                    <span class="site-title">RunningAnt· 黛玛</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/blog.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/blog.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>文章</span>
+                    </a>
+                    
+                    <a href="/blog.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我们</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/blog.github.io/">
+                    <img src="/blog.github.io/images/logo.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        RunningAnt· 黛玛
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发和乒乓球技术的博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="RunningAnt" target="_blank" href="https://antrunning2019.github.io/blog.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/AntRunning2019">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/bjbssblog">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/luke06127845">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="Facebook" target="_blank" href="https://www.facebook.com/Luke.pung2019">
+                            <i class="fa fa-facebook fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-2018-11-26 查漏补缺&amp;再度深入 172514" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      C语言查漏补缺&amp;再度深入
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/blog.github.io/categories/program/">program</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-08
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="查漏补缺-amp-再度深入"><a href="#查漏补缺-amp-再度深入" class="headerlink" title="查漏补缺&amp;再度深入"></a>查漏补缺&amp;再度深入</h3><hr>
+<h4 id="一、-字符输入输出函数–getchar-putchar"><a href="#一、-字符输入输出函数–getchar-putchar" class="headerlink" title="一、 字符输入输出函数–getchar/putchar"></a>一、 字符输入输出函数–getchar/putchar</h4><blockquote>
+<p>getchar 函数的功能是从键盘输入一个字符，其一般形式为getchar（）；</p>
+</blockquote>
+<p>通常把输入的字符赋予一个字符变量。</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">char</span> c;</span><br><span class="line">c=getchar();</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>putchar 函数是字符输出函数，其功能为在显示器上输出单个字符，一般形式为putchar(字符变量);</p>
+</blockquote>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">putchar</span>(<span class="string">'A'</span>);</span><br><span class="line"><span class="built_in">putchar</span>(x);</span><br><span class="line">putchr(<span class="string">'\n'</span>);</span><br></pre></td></tr></table></figure>
+<p>例如：输入单个字符；</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123; </span><br><span class="line">	<span class="keyword">char</span> c;</span><br><span class="line">    <span class="built_in">printf</span>(<span class="string">"输入一个字符\n"</span>);</span><br><span class="line">    c=getchar();</span><br><span class="line">    <span class="built_in">putchar</span>(c);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h4 id="二、分支结构总结"><a href="#二、分支结构总结" class="headerlink" title="二、分支结构总结"></a>二、分支结构总结</h4><ul>
+<li>关系运算符和表达式</li>
+</ul>
+<blockquote>
+<p>在程序中需要比较两个量的大小关系，以决定程序下一步的工作，比较两个量的运算符成为关系运算符</p>
+</blockquote>
+<h5 id="（一）关系运算符"><a href="#（一）关系运算符" class="headerlink" title="（一）关系运算符"></a>（一）关系运算符</h5><p>​    常见的关系运算符有&lt; 、&gt;、 &lt;=、 &gt;=、  、==、  !=</p>
+<p><strong>关系运算符都为双目运算符</strong>，结合性都为左结合，关系运算符的优先级低于算术运算符，高于赋值运算符。</p>
+<h5 id="在六个关系运算符中，-lt-、-lt-、-gt-、-gt-四个的优先级相同。高于-和！"><a href="#在六个关系运算符中，-lt-、-lt-、-gt-、-gt-四个的优先级相同。高于-和！" class="headerlink" title="在六个关系运算符中，&lt; 、&lt;=、 &gt;、 &gt;=四个的优先级相同。高于== 和！="></a>在六个关系运算符中，&lt; 、&lt;=、 &gt;、 &gt;=四个的优先级相同。高于== 和！=</h5><h5 id="（二）关系表达式"><a href="#（二）关系表达式" class="headerlink" title="（二）关系表达式"></a>（二）关系表达式</h5><p>​    一般形式：==表达式   关系运算符    表达式==</p>
+<p>​    例如：    a+b&gt;c-d</p>
+<p>​            x&gt;3/2</p>
+<p>​            a&gt;(b&gt;c)</p>
+<p>​    注意：关系表达式的值是“真”“假”，用0和1表示</p>
+<p>​    5&gt;0 的为真，值为1；</p>
+<p>​    （a=3）&gt;（b=5）  因为3&lt;5，所以为假，值为零。</p>
+<ul>
+<li>逻辑运算符和表达式</li>
+<li>if语句的三种形式、嵌套</li>
+<li>条件运算符和条件表达式（switch语句）</li>
+</ul>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年01月10日 16:50</p>
+        <p>原始链接： <a class="post-url" href="/blog.github.io/2019/01/08/2018-11-26 查漏补缺&再度深入 172514/" title="C语言查漏补缺&amp;再度深入">https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-11-26 查漏补缺&amp;再度深入 172514/</a></p>
+        <footer>
+            <a href="https://antrunning2019.github.io/blog.github.io">
+                <img src="/blog.github.io/images/logo.jpg" alt="AntRunning2019">
+                AntRunning2019
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog.github.io/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/blog.github.io/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/blog.github.io/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/blog.github.io/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/blog.github.io/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-11-26 查漏补缺&再度深入 172514/&title=《C语言查漏补缺&再度深入》 — RunnningAnt·黛玛&pic=/images/C1.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-11-26 查漏补缺&再度深入 172514/&title=《C语言查漏补缺&再度深入》 — RunnningAnt·黛玛&source=web, web前端,PHP,Javascript, 乒乓球, 书法, 编程" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-11-26 查漏补缺&再度深入 172514/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《C语言查漏补缺&再度深入》 — RunnningAnt·黛玛&url=https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-11-26 查漏补缺&再度深入 172514/&via=https://antrunning2019.github.io/blog.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-11-26 查漏补缺&再度深入 172514/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-11-26 查漏补缺&再度深入 172514/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/blog.github.io/tags/C语言/" class="color4">C语言</a>
+      
+    <a href="/blog.github.io/tags/编程/" class="color3">编程</a>
+      
+    <a href="/blog.github.io/tags/函数/" class="color3">函数</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#查漏补缺-amp-再度深入"><span class="post-toc-text">查漏补缺&amp;再度深入</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一、-字符输入输出函数–getchar-putchar"><span class="post-toc-text">一、 字符输入输出函数–getchar/putchar</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二、分支结构总结"><span class="post-toc-text">二、分支结构总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（一）关系运算符"><span class="post-toc-text">（一）关系运算符</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#在六个关系运算符中，-lt-、-lt-、-gt-、-gt-四个的优先级相同。高于-和！"><span class="post-toc-text">在六个关系运算符中，&lt; 、&lt;=、 &gt;、 &gt;=四个的优先级相同。高于== 和！=</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（二）关系表达式"><span class="post-toc-text">（二）关系表达式</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/blog.github.io/2019/01/08/软件推荐/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          工具推荐
+        
+      </span>
+    </a>
+  
+  
+    <a href="/blog.github.io/2019/01/08/2018-12-27 《君主与大臣：清中期的军机处：1723-1820》 190345/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">《君主与大臣：清中期的军机处：1723-1820》</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <div id="SOHUCS" sid="2018-11-26 查漏补缺&amp;再度深入 172514"></div>
+<script type="text/javascript">
+    (function(){
+        var appid = 'cyu1DBlNQ';
+        var conf = '7bc3c46aa7a8348dad98b41b6bd1e397';
+        var width = window.innerWidth || document.documentElement.clientWidth;
+        if (width < 960) {
+            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 AntRunning2019<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://antrunning2019.github.io/blog.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/blog.github.io/categories/article/">article</a><a class="category-link" href="/blog.github.io/categories/program/">program</a><a class="category-link" href="/blog.github.io/categories/tool/">tool</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/blog.github.io/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/blog.github.io/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/blog.github.io/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/blog.github.io/tags/函数/" style="font-size: 10px;">函数</a> <a href="/blog.github.io/tags/前端/" style="font-size: 10px;">前端</a> <a href="/blog.github.io/tags/历史/" style="font-size: 10px;">历史</a> <a href="/blog.github.io/tags/后端/" style="font-size: 10px;">后端</a> <a href="/blog.github.io/tags/工具/" style="font-size: 10px;">工具</a> <a href="/blog.github.io/tags/文学/" style="font-size: 10px;">文学</a> <a href="/blog.github.io/tags/文献/" style="font-size: 20px;">文献</a> <a href="/blog.github.io/tags/编程/" style="font-size: 10px;">编程</a> <a href="/blog.github.io/tags/脚本/" style="font-size: 20px;">脚本</a> <a href="/blog.github.io/tags/读书笔记/" style="font-size: 20px;">读书笔记</a> <a href="/blog.github.io/tags/高效办公/" style="font-size: 10px;">高效办公</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/blog.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/blog.github.io/archives">
+                    <i class="fa fa-archive"></i><span>文章</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/blog.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我们</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/blog.github.io/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/blog.github.io/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/blog.github.io/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/blog.github.io/tags/函数/" style="font-size: 10px;">函数</a> <a href="/blog.github.io/tags/前端/" style="font-size: 10px;">前端</a> <a href="/blog.github.io/tags/历史/" style="font-size: 10px;">历史</a> <a href="/blog.github.io/tags/后端/" style="font-size: 10px;">后端</a> <a href="/blog.github.io/tags/工具/" style="font-size: 10px;">工具</a> <a href="/blog.github.io/tags/文学/" style="font-size: 10px;">文学</a> <a href="/blog.github.io/tags/文献/" style="font-size: 20px;">文献</a> <a href="/blog.github.io/tags/编程/" style="font-size: 10px;">编程</a> <a href="/blog.github.io/tags/脚本/" style="font-size: 20px;">脚本</a> <a href="/blog.github.io/tags/读书笔记/" style="font-size: 20px;">读书笔记</a> <a href="/blog.github.io/tags/高效办公/" style="font-size: 10px;">高效办公</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/blog.github.io/js/search.js"></script>
+<script src="/blog.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/blog.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/blog.github.io/js/animate.js"></script>
+
+
+  <script src="/blog.github.io/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

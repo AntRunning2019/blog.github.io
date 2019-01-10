@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>RunnningAnt·黛玛</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="web, web前端,PHP,Javascript, 乒乓球, 书法, 编程">
+  
+  <meta name="description" content="title: PHP入门 date: 2019-01-08 10:54:46 一、php如何加载Mysql？PHP加载Mysql必须在php.ini中开启对Mysql的支持。     php.ini在哪？在PHP目录内 extension（扩展的意思）=php_mysql.dll extension（扩展的意思）=php_mysqli.dll 二、配置PHP函数的位置 PHP测试与连接Mysql">
+<meta name="keywords" content="web, web前端,PHP,Javascript, 乒乓球, 书法, 编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RunnningAnt·黛玛">
+<meta property="og:url" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/index.html">
+<meta property="og:site_name" content="RunnningAnt·黛玛">
+<meta property="og:description" content="title: PHP入门 date: 2019-01-08 10:54:46 一、php如何加载Mysql？PHP加载Mysql必须在php.ini中开启对Mysql的支持。     php.ini在哪？在PHP目录内 extension（扩展的意思）=php_mysql.dll extension（扩展的意思）=php_mysqli.dll 二、配置PHP函数的位置 PHP测试与连接Mysql">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544081520971.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544081635031.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544082140024.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544082493614.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544082930065.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544098530308.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544099530859.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544099712638.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544100299443.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544100873614.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544102047635.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544102559241.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544106871055.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544106970134.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544107116219.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544107189736.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544107315139.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544107764506.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544108147246.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544111011160.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544111157220.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544109787715.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544111548977.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544112842008.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544113279083.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544113587968.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544113794534.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544113945807.png">
+<meta property="og:updated_time" content="2019-01-08T08:42:56.639Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="RunnningAnt·黛玛">
+<meta name="twitter:description" content="title: PHP入门 date: 2019-01-08 10:54:46 一、php如何加载Mysql？PHP加载Mysql必须在php.ini中开启对Mysql的支持。     php.ini在哪？在PHP目录内 extension（扩展的意思）=php_mysql.dll extension（扩展的意思）=php_mysqli.dll 二、配置PHP函数的位置 PHP测试与连接Mysql">
+<meta name="twitter:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7%20PHP入门1%20003300/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1544081520971.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog.github.io/css/style.css">
+  <script src="/blog.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/blog.github.io/" class="left">
+                    <span class="site-title">RunningAnt· 黛玛</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/blog.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/blog.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>文章</span>
+                    </a>
+                    
+                    <a href="/blog.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我们</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/blog.github.io/">
+                    <img src="/blog.github.io/images/logo.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        RunningAnt· 黛玛
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发和乒乓球技术的博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="RunningAnt" target="_blank" href="https://antrunning2019.github.io/blog.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/AntRunning2019">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/luke06127845">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="Facebook" target="_blank" href="https://www.facebook.com/Luke.pung2019">
+                            <i class="fa fa-facebook fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-2018-12-7 PHP入门1 003300" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <p>title: PHP入门</p>
+<p>date: 2019-01-08 10:54:46</p>
+<h2 id="一、php如何加载Mysql？"><a href="#一、php如何加载Mysql？" class="headerlink" title="一、php如何加载Mysql？"></a>一、php如何加载Mysql？</h2><p>PHP加载Mysql必须在php.ini中开启对Mysql的支持。<br>     php.ini在哪？在PHP目录内</p>
+<pre><code>extension（扩展的意思）=php_mysql.dll
+extension（扩展的意思）=php_mysqli.dll
+</code></pre><h2 id="二、配置PHP函数的位置"><a href="#二、配置PHP函数的位置" class="headerlink" title="二、配置PHP函数的位置"></a>二、配置PHP函数的位置</h2><p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544081520971.png" alt="1544081520971"></p>
+<p>PHP测试与连接Mysql</p>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544081635031.png" alt="1544081635031"></p>
+<p>基本概念</p>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544082140024.png" alt="1544082140024"></p>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544082493614.png" alt="1544082493614"></p>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544082930065.png" alt="1544082930065"></p>
+<p>域名的两个作用：</p>
+<pre><code>1. 在外部能通过DNS服务器找到文件服务器（电脑）。
+2.  在内部建立硬盘的目录和域名的对应关系。
+</code></pre><h1 id="！PHP基础语法"><a href="#！PHP基础语法" class="headerlink" title="！PHP基础语法"></a>！PHP基础语法</h1><blockquote>
+<p>PHP是一种服务器端嵌入HTML的脚本语言，也就是说可以用PHP标签&lt;?php ?&gt;,将您想动态输出的数据嵌入到HTML代码中。</p>
+</blockquote>
+<pre><code>1. 由于我们在Apache的主配置文件中设置了PHP文件的扩展名为.php。所以我们所有的PHP文件的扩展名都为.php。
+2. PHP文件必须通过域名访问。PHP文件中不能包含中文。
+3. PHP每一条语句中必须最后加“；”分号
+4. PHP中的变量名必须区分大小写，其余的函数名、方法名、类名都不区分大小写，但建议区分。
+</code></pre><h3 id="PHP从开始至现在存在的四种标签"><a href="#PHP从开始至现在存在的四种标签" class="headerlink" title="PHP从开始至现在存在的四种标签"></a>PHP从开始至现在存在的四种标签</h3><ol>
+<li><p>标准格式（xml格式）</p>
+<p>​    &lt;?php….?&gt;</p>
+</li>
+<li><p>//脚本格式</p>
+<script language="php">
+    echo date('Y-m-d H:i:s')
+</script>
+</li>
+<li><p>短格式(在php.ini中开启  )</p>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544098530308.png" alt="1544098530308"></p>
+<p>​    &lt;? …..?&gt;</p>
+</li>
+<li><p>asp格式&lt;% …..%&gt;</p>
+</li>
+</ol>
+<h3 id="三、注释"><a href="#三、注释" class="headerlink" title="三、注释"></a>三、注释</h3><ol>
+<li>单行注释</li>
+<li>多行注释</li>
+</ol>
+<h3 id="四、-变量及操作"><a href="#四、-变量及操作" class="headerlink" title="四、 变量及操作"></a>四、 变量及操作</h3><blockquote>
+<p>程序语言都是对内存进行操作（对内存的读写操作）</p>
+</blockquote>
+<h4 id="1-概念"><a href="#1-概念" class="headerlink" title="1. 概念"></a>1. 概念</h4><p>​    变量是内存中临时存储数据的一个空间。这个空间有个名字，这个名字就叫变量名，是用来对这个内存中的数据进行引用的。</p>
+<h4 id="2-声明"><a href="#2-声明" class="headerlink" title="2. 声明"></a>2. 声明</h4><p>  <img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544099530859.png" alt="1544099530859"></p>
+<h4 id="3-删除变量"><a href="#3-删除变量" class="headerlink" title="3.删除变量"></a>3.删除变量</h4><p>​    unset($v1);</p>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544099712638.png" alt="1544099712638"></p>
+<h4 id="4-可变变量"><a href="#4-可变变量" class="headerlink" title="4.可变变量"></a>4.可变变量</h4><figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">       $v =<span class="string">'age'</span>;</span><br><span class="line">	$age=<span class="number">20</span> ;</span><br><span class="line">	<span class="keyword">echo</span> $v,<span class="string">'&lt;br /&gt;'</span>;  <span class="comment">//$v解析为age</span></span><br><span class="line">	<span class="keyword">echo</span> $$v,<span class="string">'&lt;br /&gt;'</span>;<span class="comment">//$$v解析为20</span></span><br></pre></td></tr></table></figure>
+<p>作用：</p>
+<pre><code>1. 通过一个变量访问另一个变量。（*****）
+2. 通过一个变量创建另一个变量。  
+</code></pre><p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544100299443.png" alt="1544100299443"></p>
+<ol start="5">
+<li><h4 id="预定义变量"><a href="#预定义变量" class="headerlink" title="预定义变量"></a>预定义变量</h4><blockquote>
+<p>php 为我们预先定义了一组变量，这些变量会在不同的需求中使用。</p>
+</blockquote>
+<p>$_GET   用于接收前台表单使用get方式提交的数据（不同的需求中）</p>
+<p>$_POST 用于接收前台表单使用post方式提交的数据</p>
+<p>$_REQUEST  用于接收前台用get或post方式提交的数据</p>
+<p>$_SERVER  记录了服务器端和客户端的相关信息<img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544100873614.png" alt="1544100873614"></p>
+<p>$_COOKIE  一种会话技术</p>
+<p>$_SESSION  一种会话技术</p>
+<p>$_FILES    用于记录用户上传的文件信息</p>
+<p>$GLOBAL   用于记录全局变量</p>
+</li>
+</ol>
+<h3 id="四、-内存原理"><a href="#四、-内存原理" class="headerlink" title="四、 内存原理"></a>四、 内存原理</h3><blockquote>
+<p>程序就是对内存的操作</p>
+</blockquote>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544102047635.png" alt="1544102047635"></p>
+<ol>
+<li>栈区： 保存的是变量名（保存的是引用）对于CPU来说，读取速度最快。</li>
+<li>堆区：数组等复杂数据、对象。</li>
+<li>数据段 ： 简单数据例如：整型、浮点型、布尔值</li>
+<li>代码段：存储的是源代码对应的机器指令。</li>
+<li>输出缓存：只要是遇到输出命令，例如：echo 、print、print_r、var_dump   等</li>
+</ol>
+<h4 id="PHP的执行过程"><a href="#PHP的执行过程" class="headerlink" title="PHP的执行过程"></a>PHP的执行过程</h4><ol>
+<li><p>编译阶段 ：进行语法检查、词法检查、优化代码，没有错误后转换成机器指令。</p>
+<p>​    编译错误：parse error：  syntax（语法）</p>
+</li>
+<li><p>执行阶段：如果编译通过后，会将源代码对应的机器指令，保存到代码段。遇到输出语句，放到输出缓存。</p>
+</li>
+</ol>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544102559241.png" alt="1544102559241"></p>
+<ol start="3">
+<li>程序运行结束后清空栈区中的数据</li>
+</ol>
+<h4 id="PHP的传值方式"><a href="#PHP的传值方式" class="headerlink" title="PHP的传值方式"></a>PHP的传值方式</h4><ol>
+<li><p>赋值传值</p>
+<p>使用一个变量a为另一个变量赋值时，传递的是变量a 的数值，这样就是赋值传值的方式。         </p>
+<p>整型 浮点型  字符串</p>
+</li>
+<li><p>引用传值</p>
+<p>使用一个变量a为另一个变量赋值时，传递的是a 的地址，这样的的传值方式叫做引用传值。</p>
+</li>
+</ol>
+<p>提示：js中不允许人为的更改传值方式，但PHP中可以加地址&amp;改变。</p>
+<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><blockquote>
+<p>常量是一种特殊的变量，也用于存储数据，常量一旦定义就不可以改变，本身也不允许删除 不能unset(常量)。</p>
+<p>常量的值只能是基本数据类型，不能是数组</p>
+<p>常量命名一般是<strong>大写</strong></p>
+</blockquote>
+<ol>
+<li><p>定义</p>
+<pre><code>1. 语法一、define(&apos;常量名，值&apos;)
+     2. 语法二、const  常量名=值；
+</code></pre><p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544106871055.png" alt="1544106871055"></p>
+<p><strong>区别</strong> ： define语法可以在分支结构中定义常量。const不能在分支结构中定义常量。</p>
+</li>
+</ol>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544106970134.png" alt="1544106970134"></p>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544107116219.png" alt="1544107116219"></p>
+<ol start="2">
+<li><p>常量的判断及获取所有的常量</p>
+<p>判断一个常量是否存在？</p>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544107189736.png" alt="1544107189736"></p>
+<p>get_defined_constants();//查看常量<img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544107315139.png" alt="1544107315139"></p>
+</li>
+</ol>
+<h4 id="魔术常量"><a href="#魔术常量" class="headerlink" title="魔术常量"></a>魔术常量</h4><p>PHP中定义了一组魔术常量、</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">echo</span> <span class="keyword">__FILE__</span> ,&lt;br /&gt;;</span><br><span class="line">echo__DIR__ ,&lt;br /&gt;</span><br><span class="line">   echo__LINE__ ,&lt;br /&gt;</span><br></pre></td></tr></table></figure>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544107764506.png" alt="1544107764506"></p>
+<h2 id="PHP-中的数据类型"><a href="#PHP-中的数据类型" class="headerlink" title="PHP 中的数据类型"></a>PHP 中的数据类型</h2><p>三大类 八小类</p>
+<ol>
+<li><p>标量（scalar）数据类型</p>
+<p>int</p>
+<p>float</p>
+<p>boolean</p>
+<p>string</p>
+</li>
+<li><p>复合数据类型</p>
+<p>array</p>
+<p>object</p>
+</li>
+<li><p>特殊数据类型</p>
+<p>null</p>
+<p>resource   资源类型</p>
+</li>
+</ol>
+<h4 id="数据类型详解之整数（Int）类型"><a href="#数据类型详解之整数（Int）类型" class="headerlink" title="数据类型详解之整数（Int）类型"></a>数据类型详解之整数（Int）类型</h4><ol>
+<li><p>线性的整数（默认计算机处理二进制，显示时自动转换为十进制）</p>
+<ol>
+<li>十进制、</li>
+<li>八进制</li>
+<li>二进制</li>
+<li>十六进制</li>
+</ol>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544108147246.png" alt="1544108147246"></p>
+</li>
+</ol>
+<h3 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h3><blockquote>
+<p>两种表示方式： 科学计数法和普通形式 </p>
+</blockquote>
+<p>字符串类型</p>
+<ol>
+<li><p>单引号定义的字符串</p>
+<p>单引号定义的字符串能够被转义的只有两个 \ \  \’</p>
+<p>单引号定义的字符串中的变量不能解析其值。</p>
+</li>
+<li><p>双引号定义的字符串</p>
+<p>基本上都可以被转义：\”   \t  \r \n  \  \$ </p>
+<p>双引号中定义的字符串中的变量能解析其值。</p>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544111011160.png" alt="1544111011160"></p>
+<p>用花括号{}  范围限制</p>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544111157220.png" alt="1544111157220"></p>
+</li>
+</ol>
+<p>转义符：</p>
+<blockquote>
+<p>功能：用于将程序语言所赋予的某些字符的特殊功能转义掉。</p>
+<p>输出不可见的字符</p>
+</blockquote>
+<p>转义符能够转义的字符：</p>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544109787715.png" alt="1544109787715"></p>
+<p> <img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544111548977.png" alt="1544111548977"></p>
+<h3 id="数据类型Boolean"><a href="#数据类型Boolean" class="headerlink" title="数据类型Boolean"></a>数据类型Boolean</h3><p>两个值true、false</p>
+<h4 id="数组"><a href="#数组" class="headerlink" title="数组"></a>数组</h4><ol>
+<li><p>索引数组：数组元素的下标是数值</p>
+</li>
+<li><p>关联数组： 数组元素的下标是字符串</p>
+</li>
+</ol>
+   <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;?php </span><br><span class="line">	echo&apos;&lt;pre&gt;&apos;;</span><br><span class="line">	//访问$_SERVER数组中的下标为REMOATE_ADDR的元素</span><br><span class="line">	echo$_SERVER[&apos;REMOTE_ADDR&apos;];</span><br><span class="line">//变量（数组）与字符串进行拼接</span><br><span class="line">$h3 =&quot;&lt;h3&gt;$_SERVR[REMOTE_ADDR]&lt;/h3&gt;&quot;;</span><br><span class="line">$h3 =&quot;&lt;h3&gt;&#123;$_SERVER[&apos;REMOTE_ADDR&apos;]&#125;&lt;/h3&gt;&quot;;</span><br></pre></td></tr></table></figure>
+<p>   如果在字符串中要输出元素：字符串不需要加引号</p>
+<p>   <img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544112842008.png" alt="1544112842008"></p>
+<h3 id="null-只有一个值"><a href="#null-只有一个值" class="headerlink" title="null 只有一个值"></a>null 只有一个值</h3><h3 id="资源数据类型"><a href="#资源数据类型" class="headerlink" title="资源数据类型"></a>资源数据类型</h3><p>resource类型</p>
+<p>​    资源数据类型也是一个特殊的变量，程序员没有办法直接定义一个资源。必须使用php提供的特殊函数</p>
+<p>例如：$file = fopen(‘data.txt’,’r’);</p>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544113279083.png" alt="1544113279083"></p>
+<h3 id="数据类型的转换"><a href="#数据类型的转换" class="headerlink" title="数据类型的转换"></a>数据类型的转换</h3><blockquote>
+<p>当数据类型不同时会自动转换，还可以强制类型转换</p>
+</blockquote>
+<p>强制类型转换：</p>
+<p>​    其他类型转换成Boolean</p>
+<p>​    <img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544113587968.png" alt="    1544113587968"></p>
+<p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544113794534.png" alt="1544113794534"></p>
+<h3 id="数据及类型的判断"><a href="#数据及类型的判断" class="headerlink" title="数据及类型的判断"></a>数据及类型的判断</h3><p><img src="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1544113945807.png" alt="1544113945807"></p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年01月08日 16:42</p>
+        <p>原始链接： <a class="post-url" href="/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/" title="">https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/</a></p>
+        <footer>
+            <a href="https://antrunning2019.github.io/blog.github.io">
+                <img src="/blog.github.io/images/logo.jpg" alt="AntRunning2019">
+                AntRunning2019
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog.github.io/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/blog.github.io/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/blog.github.io/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/blog.github.io/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/blog.github.io/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/&title=RunnningAnt·黛玛&pic=https://antrunning2019.github.io/blog.github.ioimages/logo.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/&title=RunnningAnt·黛玛&source=web, web前端,PHP,Javascript, 乒乓球, 书法, 编程" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=RunnningAnt·黛玛&url=https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/&via=https://antrunning2019.github.io/blog.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://antrunning2019.github.io/blog.github.io/2019/01/08/2018-12-7 PHP入门1 003300/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#一、php如何加载Mysql？"><span class="post-toc-text">一、php如何加载Mysql？</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#二、配置PHP函数的位置"><span class="post-toc-text">二、配置PHP函数的位置</span></a></li></ol><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#！PHP基础语法"><span class="post-toc-text">！PHP基础语法</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#PHP从开始至现在存在的四种标签"><span class="post-toc-text">PHP从开始至现在存在的四种标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#三、注释"><span class="post-toc-text">三、注释</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、-变量及操作"><span class="post-toc-text">四、 变量及操作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#1-概念"><span class="post-toc-text">1. 概念</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#2-声明"><span class="post-toc-text">2. 声明</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#3-删除变量"><span class="post-toc-text">3.删除变量</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#4-可变变量"><span class="post-toc-text">4.可变变量</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#预定义变量"><span class="post-toc-text">预定义变量</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#四、-内存原理"><span class="post-toc-text">四、 内存原理</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#PHP的执行过程"><span class="post-toc-text">PHP的执行过程</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#PHP的传值方式"><span class="post-toc-text">PHP的传值方式</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#常量"><span class="post-toc-text">常量</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#魔术常量"><span class="post-toc-text">魔术常量</span></a></li></ol></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#PHP-中的数据类型"><span class="post-toc-text">PHP 中的数据类型</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数据类型详解之整数（Int）类型"><span class="post-toc-text">数据类型详解之整数（Int）类型</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#浮点类型"><span class="post-toc-text">浮点类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据类型Boolean"><span class="post-toc-text">数据类型Boolean</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#数组"><span class="post-toc-text">数组</span></a></li></ol></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#null-只有一个值"><span class="post-toc-text">null 只有一个值</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#资源数据类型"><span class="post-toc-text">资源数据类型</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据类型的转换"><span class="post-toc-text">数据类型的转换</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#数据及类型的判断"><span class="post-toc-text">数据及类型的判断</span></a></li>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/blog.github.io/2019/01/08/2018-12-8 php入门2 004018/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          (no title)
+        
+      </span>
+    </a>
+  
+  
+    <a href="/blog.github.io/2019/01/08/2018-12-7 Bootstrap第一节 230821/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title"></span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 AntRunning2019<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://antrunning2019.github.io/blog.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/blog.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/blog.github.io/archives">
+                    <i class="fa fa-archive"></i><span>文章</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/blog.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我们</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/blog.github.io/js/search.js"></script>
+<script src="/blog.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/blog.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/blog.github.io/js/animate.js"></script>
+
+
+  <script src="/blog.github.io/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

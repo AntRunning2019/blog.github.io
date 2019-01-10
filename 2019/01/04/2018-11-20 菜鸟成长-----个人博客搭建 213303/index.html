@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>菜鸟成长-----个人博客搭建 | RunnningAnt·黛玛</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="web, web前端,PHP,Javascript, 乒乓球, 书法, 编程">
+  
+  <meta name="description" content="一、总目标： 使用PHP+Mysql+Apache在本地搭建开发环境（可以使用集成环境、也可以自己搭建Apache组建） 下载WordPress并安装 进行博客搭建，插件安装、界面及功能的设计 部署到服务器或者映射到公网进行测试（哈哈，满足自己的虚荣心） 首先下载花生壳安装并注册 进行orcy的实名认证（需要身份证正反面照片+手持一张写有“仅用于Orcy实名认证”的自拍照） 内网穿透配置（后面详细">
+<meta name="keywords" content="web, web前端,PHP,Javascript, 乒乓球, 书法, 编程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="菜鸟成长-----个人博客搭建">
+<meta property="og:url" content="https://antrunning2019.github.io/blog.github.io/2019/01/04/2018-11-20 菜鸟成长-----个人博客搭建 213303/index.html">
+<meta property="og:site_name" content="RunnningAnt·黛玛">
+<meta property="og:description" content="一、总目标： 使用PHP+Mysql+Apache在本地搭建开发环境（可以使用集成环境、也可以自己搭建Apache组建） 下载WordPress并安装 进行博客搭建，插件安装、界面及功能的设计 部署到服务器或者映射到公网进行测试（哈哈，满足自己的虚荣心） 首先下载花生壳安装并注册 进行orcy的实名认证（需要身份证正反面照片+手持一张写有“仅用于Orcy实名认证”的自拍照） 内网穿透配置（后面详细">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/04/2018-11-20%20菜鸟成长-----个人博客搭建%20213303/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1542717953982.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1159459/201711/1159459-20171127230902081-958214378.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/04/2018-11-20%20菜鸟成长-----个人博客搭建%20213303/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1542719034620.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1159459/201711/1159459-20171127232604878-1142810780.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/04/2018-11-20%20菜鸟成长-----个人博客搭建%20213303/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1542719665494.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1159459/201711/1159459-20171127232604878-1142810780.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1159459/201711/1159459-20171127234729331-90021824.png">
+<meta property="og:image" content="https://images2018.cnblogs.com/blog/1159459/201711/1159459-20171127234841878-1386235782.png">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/04/2018-11-20%20菜鸟成长-----个人博客搭建%20213303/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1542720379324.png">
+<meta property="og:updated_time" content="2019-01-08T08:35:14.078Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="菜鸟成长-----个人博客搭建">
+<meta name="twitter:description" content="一、总目标： 使用PHP+Mysql+Apache在本地搭建开发环境（可以使用集成环境、也可以自己搭建Apache组建） 下载WordPress并安装 进行博客搭建，插件安装、界面及功能的设计 部署到服务器或者映射到公网进行测试（哈哈，满足自己的虚荣心） 首先下载花生壳安装并注册 进行orcy的实名认证（需要身份证正反面照片+手持一张写有“仅用于Orcy实名认证”的自拍照） 内网穿透配置（后面详细">
+<meta name="twitter:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/04/2018-11-20%20菜鸟成长-----个人博客搭建%20213303/C:/Users/贾鹏/AppData/Roaming/Typora/typora-user-images/1542717953982.png">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog.github.io/css/style.css">
+  <script src="/blog.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/blog.github.io/" class="left">
+                    <span class="site-title">RunningAnt· 黛玛</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/blog.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/blog.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>文章</span>
+                    </a>
+                    
+                    <a href="/blog.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我们</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/blog.github.io/">
+                    <img src="/blog.github.io/images/logo.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        RunningAnt· 黛玛
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发和乒乓球技术的博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="RunningAnt" target="_blank" href="https://antrunning2019.github.io/blog.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/AntRunning2019">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/luke06127845">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="Facebook" target="_blank" href="https://www.facebook.com/Luke.pung2019">
+                            <i class="fa fa-facebook fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-2018-11-20 菜鸟成长-----个人博客搭建 213303" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      菜鸟成长-----个人博客搭建
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-04
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h4 id="一、总目标："><a href="#一、总目标：" class="headerlink" title="一、总目标："></a>一、总目标：</h4><ul>
+<li>使用PHP+Mysql+Apache在本地搭建开发环境（可以使用集成环境、也可以自己搭建Apache组建）</li>
+<li>下载WordPress并安装</li>
+<li>进行博客搭建，插件安装、界面及功能的设计</li>
+<li>部署到服务器或者映射到公网进行测试（哈哈，满足自己的虚荣心）<ul>
+<li>首先下载花生壳安装并注册</li>
+<li>进行orcy的实名认证（需要身份证正反面照片+手持一张写有“仅用于Orcy实名认证”的自拍照）</li>
+<li>内网穿透配置（后面详细说）</li>
+</ul>
+</li>
+</ul>
+<h4 id="二、如何一步一步解决问题？"><a href="#二、如何一步一步解决问题？" class="headerlink" title="二、如何一步一步解决问题？"></a>二、如何一步一步解决问题？</h4><h5 id="（一）-所需工具"><a href="#（一）-所需工具" class="headerlink" title="（一） 所需工具"></a>（一） 所需工具</h5><pre><code> 1. 如果选择不用集成环境则需要
+  ​    1. httpd-2.2.22-win32-x86-no_ssl.msi
+
+ ​         2. PHP任意版本安装包
+ ​         3. mysql-5.5.28-win32.msi
+2. 如果选用集成环境（和我的方法一样）
+
+- 我选用了[XMAPP](https://www.apachefriends.org/zh_cn/index.html) （点击下载）
+</code></pre><h5 id="（二）进行xmapp的安装与配置-详细步骤"><a href="#（二）进行xmapp的安装与配置-详细步骤" class="headerlink" title="（二）进行xmapp的安装与配置(详细步骤)"></a>（二）进行xmapp的安装与配置(详细步骤)</h5><blockquote>
+<p>1.XMAPP简介</p>
+<p>2.安装XMAPP</p>
+<p>3.配置虚拟主机</p>
+<p>4.修改hosts文件</p>
+<p>5.测试是否XAMPP成功运行</p>
+</blockquote>
+<ol>
+<li>XMAPP简介</li>
+</ol>
+<blockquote>
+<p><strong>XAMPP（Apache+MySQL/MariaDB+PHP+Perl）</strong></p>
+<p>开头的X代表X-OS，代表可以在任何常见操作系统下使用，包括Windows、Mac、Linux，开源平台。</p>
+<p>XAMPP（Apache+MySQL+PHP+PERL）是一个功能强大的建站集成软件包。这个软件包原来的名字是 LAMPP，但是为了避免误解，最新的几个版本就改名为 XAMPP 了。它可以在Windows、Linux、Solaris、Mac OS X 等多种操作系统下安装使用，支持==多语言==：英文、简体中文、繁体中文、韩文、俄文、日文等。</p>
+<p>许多人通过他们自己的经验认识到安装 Apache 服务器是件不容易的事儿。如果您想添加 MySQL、PHP 和 Perl，那就更难了。==XAMPP 是一个易于安装且包含 MySQL、PHP 和 Perl 的 Apache 发行版。==XAMPP 的确非常容易安装和使用：<em>只需下载，解压缩，启动即可。</em></p>
+</blockquote>
+<ol start="2">
+<li>安装XMAPP<ul>
+<li>首先在d盘下建立一个XAMPP的文件夹，点击下载好的.exe文件安装，并且安装目录选刚建好的那个文件夹。</li>
+<li>安装后的界面如下图<img src="/blog.github.io/2019/01/04/2018-11-20 菜鸟成长-----个人博客搭建 213303/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1542717953982.png" alt="1542717953982"></li>
+</ul>
+</li>
+<li>如果点击5个start全亮绿灯，那是真够幸运的（不过出了问题才能进步，一般由于端口占用，可能会报错）</li>
+</ol>
+<p><img src="https://images2018.cnblogs.com/blog/1159459/201711/1159459-20171127230902081-958214378.png" alt="img"></p>
+<p>​    注意：如果Apache的80,443端口被占用，请阅读（第三部分—容易出错的问题）这一章节</p>
+<ol start="2">
+<li><p>配置虚拟主机</p>
+<ul>
+<li><p>==首先要知道三个重要的配置文件的位置：==</p>
+<p>D:\xampp\apache\conf\httpd.conf     (Apache配置文档)</p>
+<p>D:\xampp\apache\conf\extra\httpd-vhosts.conf    （配置虚拟机）</p>
+<p>C:\Windows\System32\drivers\etc\hosts   （配置虚拟机打开的时候取得管理员权限，不然修改完不能保存）</p>
+</li>
+<li><p>修改默认根目录</p>
+<ul>
+<li>打开D:\xampp\apache\conf\httpd.conf  文件，找到<img src="/blog.github.io/2019/01/04/2018-11-20 菜鸟成长-----个人博客搭建 213303/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1542719034620.png" alt="1542719034620"></li>
+</ul>
+<p>注意：</p>
+<ol>
+<li><p>找到如图所示位置并改这三处就行：把Document Root”  #”内容改为自己的路径即可。</p>
+<ol start="2">
+<li>Apache安装后的默认路径是 D:\xampp\apache\htdocs\   里面放一个网页如：index.html或index.php等</li>
+</ol>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>修改httpd-vhosts.conf文件</p>
+<p>代码如下：</p>
+<p><code>&lt;VirtualHost *:80&gt;</code><br> <code>ServerName jasonjan.com</code><br> <code>DocumentRoot &quot;D:/XAMPP/virtualhost&quot;</code><br><code>&lt;Directory &quot;D:/XAMPP/virtualhost&quot;&gt;</code><br> <code>Options FollowSymLinks IncludesNOEXEC Indexes</code><br> <code>DirectoryIndex index.html index.htm index.php</code><br> <code>AllowOverride all</code><br> <code>Order Deny,Allow</code><br> <code>Allow from all</code><br> <code>Require all granted</code><br><code>&lt;/Directory&gt;</code><br><code>&lt;/VirtualHost&gt;</code></p>
+<p>效果如下：<img src="https://images2018.cnblogs.com/blog/1159459/201711/1159459-20171127232604878-1142810780.png" alt="img"></p>
+</li>
+<li><p>修改hosts文件</p>
+<p><img src="/blog.github.io/2019/01/04/2018-11-20 菜鸟成长-----个人博客搭建 213303/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1542719665494.png" alt="1542719665494"></p>
+<p><img src="https://images2018.cnblogs.com/blog/1159459/201711/1159459-20171127232604878-1142810780.png" alt="img"></p>
+</li>
+<li><p>测试是否XAMPP成功运行</p>
+</li>
+</ol>
+<p>   <img src="https://images2018.cnblogs.com/blog/1159459/201711/1159459-20171127234729331-90021824.png" alt="img"></p>
+<p>   在浏览器中输入域名www.####.com看能不能出现如下页面：<img src="https://images2018.cnblogs.com/blog/1159459/201711/1159459-20171127234841878-1386235782.png" alt="img"></p>
+<p>   ==<strong>如果是这样，那么就很幸运，基本ok了！</strong>==</p>
+<ol start="6">
+<li><p>如何设置访问根目录如</p>
+<p><img src="/blog.github.io/2019/01/04/2018-11-20 菜鸟成长-----个人博客搭建 213303/C:/Users\贾鹏\AppData\Roaming\Typora\typora-user-images\1542720379324.png" alt="1542720379324"></p>
+<p>​    如上图可以方便程序员的调试。在正式企业中，是绝对不可以的。那是如何做到的呢？</p>
+</li>
+</ol>
+<h5 id="（三）进行wordpress的安装配置"><a href="#（三）进行wordpress的安装配置" class="headerlink" title="（三）进行wordpress的安装配置"></a>（三）进行wordpress的安装配置</h5><h5 id="（四）wordpress的入门学习"><a href="#（四）wordpress的入门学习" class="headerlink" title="（四）wordpress的入门学习"></a>（四）wordpress的入门学习</h5><h5 id="（五）花生壳的基本使用"><a href="#（五）花生壳的基本使用" class="headerlink" title="（五）花生壳的基本使用"></a>（五）花生壳的基本使用</h5><h4 id="三、容易出错的地方"><a href="#三、容易出错的地方" class="headerlink" title="三、容易出错的地方"></a>三、容易出错的地方</h4><ol>
+<li>修改了配置文件一定记得重启Apache服务器才能</li>
+</ol>
+<h4 id="四、方法的优缺点"><a href="#四、方法的优缺点" class="headerlink" title="四、方法的优缺点"></a>四、方法的优缺点</h4><ol>
+<li>为什么不推荐使用集成环境搭建Apache？</li>
+</ol>
+<blockquote>
+<p><strong>不使用集成环境的原因</strong></p>
+<p>1，集成环境都不需要自己搭建apache等组件，至于它们为什么组合到一起以及如何组合到一起我们并不知道</p>
+<p>2，在真实的开发环境中，不一定非要使用Apache，比如还有IIS等；也不一定非要使用Mysql，所以我们必须要了解web服务器其中的原理</p>
+<p>3，集成环境都是第三方软件，不一定安全，有一定的风险</p>
+</blockquote>
+<p>2. </p>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年01月08日 16:35</p>
+        <p>原始链接： <a class="post-url" href="/blog.github.io/2019/01/04/2018-11-20 菜鸟成长-----个人博客搭建 213303/" title="菜鸟成长-----个人博客搭建">https://antrunning2019.github.io/blog.github.io/2019/01/04/2018-11-20 菜鸟成长-----个人博客搭建 213303/</a></p>
+        <footer>
+            <a href="https://antrunning2019.github.io/blog.github.io">
+                <img src="/blog.github.io/images/logo.jpg" alt="AntRunning2019">
+                AntRunning2019
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog.github.io/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/blog.github.io/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/blog.github.io/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/blog.github.io/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/blog.github.io/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://antrunning2019.github.io/blog.github.io/2019/01/04/2018-11-20 菜鸟成长-----个人博客搭建 213303/&title=《菜鸟成长-----个人博客搭建》 — RunnningAnt·黛玛&pic=https://antrunning2019.github.io/blog.github.ioimages/logo.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://antrunning2019.github.io/blog.github.io/2019/01/04/2018-11-20 菜鸟成长-----个人博客搭建 213303/&title=《菜鸟成长-----个人博客搭建》 — RunnningAnt·黛玛&source=web, web前端,PHP,Javascript, 乒乓球, 书法, 编程" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://antrunning2019.github.io/blog.github.io/2019/01/04/2018-11-20 菜鸟成长-----个人博客搭建 213303/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《菜鸟成长-----个人博客搭建》 — RunnningAnt·黛玛&url=https://antrunning2019.github.io/blog.github.io/2019/01/04/2018-11-20 菜鸟成长-----个人博客搭建 213303/&via=https://antrunning2019.github.io/blog.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://antrunning2019.github.io/blog.github.io/2019/01/04/2018-11-20 菜鸟成长-----个人博客搭建 213303/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://antrunning2019.github.io/blog.github.io/2019/01/04/2018-11-20 菜鸟成长-----个人博客搭建 213303/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一、总目标："><span class="post-toc-text">一、总目标：</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#二、如何一步一步解决问题？"><span class="post-toc-text">二、如何一步一步解决问题？</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（一）-所需工具"><span class="post-toc-text">（一） 所需工具</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（二）进行xmapp的安装与配置-详细步骤"><span class="post-toc-text">（二）进行xmapp的安装与配置(详细步骤)</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（三）进行wordpress的安装配置"><span class="post-toc-text">（三）进行wordpress的安装配置</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（四）wordpress的入门学习"><span class="post-toc-text">（四）wordpress的入门学习</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#（五）花生壳的基本使用"><span class="post-toc-text">（五）花生壳的基本使用</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#三、容易出错的地方"><span class="post-toc-text">三、容易出错的地方</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#四、方法的优缺点"><span class="post-toc-text">四、方法的优缺点</span></a></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/blog.github.io/2019/01/08/Test-the-blog/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          Test the blog
+        
+      </span>
+    </a>
+  
+  
+</nav>
+
+
+
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 AntRunning2019<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://antrunning2019.github.io/blog.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            
+        </div>
+        <div id="sidebar-menu-box-tags">
+            
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/blog.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/blog.github.io/archives">
+                    <i class="fa fa-archive"></i><span>文章</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/blog.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我们</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/blog.github.io/js/search.js"></script>
+<script src="/blog.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/blog.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/blog.github.io/js/animate.js"></script>
+
+
+  <script src="/blog.github.io/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

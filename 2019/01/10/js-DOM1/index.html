@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Dom总结（一） | RunnningAnt·黛玛</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="web, web前端,PHP,Javascript, 乒乓球, 书法, 编程">
+  
+  <meta name="description" content="Dom总结DOM (Document Object Model) 译为文档对象模型，是 HTML 和 XML 文档的编程接口。  一、获取的方法 document.getElementById(); document.getElementByClassName(); 得到的是一个集合，从0开始 document.getElementByName(); document.title; //获取网页标">
+<meta name="keywords" content="Javascript,脚本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Dom总结（一）">
+<meta property="og:url" content="https://antrunning2019.github.io/blog.github.io/2019/01/10/js-DOM1/index.html">
+<meta property="og:site_name" content="RunnningAnt·黛玛">
+<meta property="og:description" content="Dom总结DOM (Document Object Model) 译为文档对象模型，是 HTML 和 XML 文档的编程接口。  一、获取的方法 document.getElementById(); document.getElementByClassName(); 得到的是一个集合，从0开始 document.getElementByName(); document.title; //获取网页标">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/10/js-DOM1/1.gif">
+<meta property="og:updated_time" content="2019-01-10T08:59:24.498Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Dom总结（一）">
+<meta name="twitter:description" content="Dom总结DOM (Document Object Model) 译为文档对象模型，是 HTML 和 XML 文档的编程接口。  一、获取的方法 document.getElementById(); document.getElementByClassName(); 得到的是一个集合，从0开始 document.getElementByName(); document.title; //获取网页标">
+<meta name="twitter:image" content="https://antrunning2019.github.io/blog.github.io/2019/01/10/js-DOM1/1.gif">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog.github.io/css/style.css">
+  <script src="/blog.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/blog.github.io/" class="left">
+                    <span class="site-title">RunningAnt· 黛玛</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/blog.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/blog.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>文章</span>
+                    </a>
+                    
+                    <a href="/blog.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我们</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/blog.github.io/">
+                    <img src="/blog.github.io/images/logo.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        RunningAnt· 黛玛
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发和乒乓球技术的博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="RunningAnt" target="_blank" href="https://antrunning2019.github.io/blog.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/AntRunning2019">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/bjbssblog">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/luke06127845">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="Facebook" target="_blank" href="https://www.facebook.com/Luke.pung2019">
+                            <i class="fa fa-facebook fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-js-DOM1" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Dom总结（一）
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/blog.github.io/categories/program/">program</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-10
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="Dom总结"><a href="#Dom总结" class="headerlink" title="Dom总结"></a>Dom总结</h3><p>DOM (Document Object Model) 译为<strong>文档对象模型</strong>，是 HTML 和 XML 文档的编程接口。</p>
+<p><img src="/blog.github.io/2019/01/10/js-DOM1/1.gif" alt="f"></p>
+<h5 id="一、获取的方法"><a href="#一、获取的方法" class="headerlink" title="一、获取的方法"></a>一、获取的方法</h5><ul>
+<li>document.getElementById();</li>
+<li>document.getElementByClassName(); 得到的是一个集合，从0开始</li>
+<li>document.getElementByName();</li>
+<li>document.title; //获取网页标题</li>
+<li>document.body; // 获取body的节点，即整个DOM树</li>
+<li>document.documentElement.clientWidth; //获得可视区域的宽度</li>
+<li>document.documentElement.clientHeight; //获得可视区域的高度</li>
+<li>document.getElementsByTagName(‘p’); //获取的到的是一个集合，通过访问下标依次操作</li>
+</ul>
+<h5 id="二、代码如下："><a href="#二、代码如下：" class="headerlink" title="二、代码如下："></a>二、代码如下：</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>DOM操作<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        #box &#123;</span></span><br><span class="line"><span class="undefined">            width: 800px;</span></span><br><span class="line"><span class="undefined">            height: 800px;</span></span><br><span class="line"><span class="undefined">            margin: 0 auto;</span></span><br><span class="line"><span class="undefined">            border: solid 1px black;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        .first &#123;</span></span><br><span class="line"><span class="undefined">            width: 33%;</span></span><br><span class="line"><span class="undefined">            height: 500px;</span></span><br><span class="line"><span class="undefined">            border: solid 1px blue;</span></span><br><span class="line"><span class="undefined">            float: left;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        #one &#123;</span></span><br><span class="line"><span class="undefined">            width: 100%;</span></span><br><span class="line"><span class="undefined">            height: 100px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"one"</span>&gt;</span>1<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"first"</span>&gt;</span> 2</span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"p1"</span>&gt;</span>段落1<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"p1"</span>&gt;</span>段落2<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">p</span> <span class="attr">class</span>=<span class="string">"p1"</span>&gt;</span>段落3<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"first"</span>&gt;</span>3<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"first"</span>&gt;</span>4<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"text"</span> <span class="attr">id</span>=<span class="string">"txt"</span> <span class="attr">placeholder</span>=<span class="string">"请输入段落内容"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"改变样式"</span> <span class="attr">onclick</span>=<span class="string">"change1()"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"获取可视区的宽度和高度"</span> <span class="attr">onclick</span>=<span class="string">"view1()"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="xml">    <span class="comment">&lt;!--文档对象模型 DOM--&gt;</span></span></span><br><span class="line"><span class="undefined">    /**</span></span><br><span class="line"><span class="undefined">     * 1. 获取的方法</span></span><br><span class="line"><span class="undefined">     *  document.getElementById();</span></span><br><span class="line"><span class="undefined">     *  document.getElementByClassName(); 得到的是一个集合，从0开始</span></span><br><span class="line"><span class="undefined">     *  document.getElementByName();</span></span><br><span class="line"><span class="undefined">     */</span></span><br><span class="line"><span class="undefined">    var tit = document.title; //获取网页标题</span></span><br><span class="line"><span class="undefined">    var bo = document.body; // 获取body的节点，即整个DOM树</span></span><br><span class="line"><span class="undefined">    var wid = document.documentElement.clientWidth; //获得可视区域的宽度</span></span><br><span class="line"><span class="undefined">    var hei = document.documentElement.clientHeight; //获得可视区域的高度</span></span><br><span class="line"><span class="undefined">    var tName = document.getElementsByTagName('p'); //获取的到的是一个集合，通过访问下标依次操作</span></span><br><span class="line"><span class="undefined">    var iDiv = document.getElementById('one');</span></span><br><span class="line"><span class="undefined">    var text1 = document.getElementById("txt");</span></span><br><span class="line"><span class="undefined">    var cd = document.getElementsByClassName('first');</span></span><br><span class="line"><span class="undefined">    console.log(tit, bo, iDiv, cd, tName);</span></span><br><span class="line"><span class="undefined">    function change1() &#123;</span></span><br><span class="line"><span class="undefined">        tName[1].innerHTML = text1.value;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined">    function view1() &#123;</span></span><br><span class="line"><span class="undefined">        alert("可视区的宽度为："+wid+"像素");</span></span><br><span class="line"><span class="undefined">        alert("可视区的高度为："+hei+"像素");</span></span><br><span class="line"><span class="undefined">        console.log("可视区的宽度为："+wid);</span></span><br><span class="line"><span class="undefined">        console.log("可视区的高度为："+hei);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年01月10日 16:59</p>
+        <p>原始链接： <a class="post-url" href="/blog.github.io/2019/01/10/js-DOM1/" title="Dom总结（一）">https://antrunning2019.github.io/blog.github.io/2019/01/10/js-DOM1/</a></p>
+        <footer>
+            <a href="https://antrunning2019.github.io/blog.github.io">
+                <img src="/blog.github.io/images/logo.jpg" alt="AntRunning2019">
+                AntRunning2019
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog.github.io/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/blog.github.io/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/blog.github.io/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/blog.github.io/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/blog.github.io/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://antrunning2019.github.io/blog.github.io/2019/01/10/js-DOM1/&title=《Dom总结（一）》 — RunnningAnt·黛玛&pic=/images/js3.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://antrunning2019.github.io/blog.github.io/2019/01/10/js-DOM1/&title=《Dom总结（一）》 — RunnningAnt·黛玛&source=web, web前端,PHP,Javascript, 乒乓球, 书法, 编程" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://antrunning2019.github.io/blog.github.io/2019/01/10/js-DOM1/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Dom总结（一）》 — RunnningAnt·黛玛&url=https://antrunning2019.github.io/blog.github.io/2019/01/10/js-DOM1/&via=https://antrunning2019.github.io/blog.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://antrunning2019.github.io/blog.github.io/2019/01/10/js-DOM1/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://antrunning2019.github.io/blog.github.io/2019/01/10/js-DOM1/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/blog.github.io/tags/Javascript/" class="color1">Javascript</a>
+      
+    <a href="/blog.github.io/tags/脚本/" class="color3">脚本</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Dom总结"><span class="post-toc-text">Dom总结</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#一、获取的方法"><span class="post-toc-text">一、获取的方法</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#二、代码如下："><span class="post-toc-text">二、代码如下：</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/blog.github.io/2019/01/08/软件推荐/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">工具推荐</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <div id="SOHUCS" sid="js-DOM1"></div>
+<script type="text/javascript">
+    (function(){
+        var appid = 'cyu1DBlNQ';
+        var conf = '7bc3c46aa7a8348dad98b41b6bd1e397';
+        var width = window.innerWidth || document.documentElement.clientWidth;
+        if (width < 960) {
+            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 AntRunning2019<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://antrunning2019.github.io/blog.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/blog.github.io/categories/article/">article</a><a class="category-link" href="/blog.github.io/categories/program/">program</a><a class="category-link" href="/blog.github.io/categories/tool/">tool</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/blog.github.io/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/blog.github.io/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/blog.github.io/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/blog.github.io/tags/函数/" style="font-size: 10px;">函数</a> <a href="/blog.github.io/tags/前端/" style="font-size: 10px;">前端</a> <a href="/blog.github.io/tags/历史/" style="font-size: 10px;">历史</a> <a href="/blog.github.io/tags/后端/" style="font-size: 10px;">后端</a> <a href="/blog.github.io/tags/工具/" style="font-size: 10px;">工具</a> <a href="/blog.github.io/tags/文学/" style="font-size: 10px;">文学</a> <a href="/blog.github.io/tags/文献/" style="font-size: 20px;">文献</a> <a href="/blog.github.io/tags/编程/" style="font-size: 10px;">编程</a> <a href="/blog.github.io/tags/脚本/" style="font-size: 20px;">脚本</a> <a href="/blog.github.io/tags/读书笔记/" style="font-size: 20px;">读书笔记</a> <a href="/blog.github.io/tags/高效办公/" style="font-size: 10px;">高效办公</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/blog.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/blog.github.io/archives">
+                    <i class="fa fa-archive"></i><span>文章</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/blog.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我们</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/blog.github.io/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/blog.github.io/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/blog.github.io/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/blog.github.io/tags/函数/" style="font-size: 10px;">函数</a> <a href="/blog.github.io/tags/前端/" style="font-size: 10px;">前端</a> <a href="/blog.github.io/tags/历史/" style="font-size: 10px;">历史</a> <a href="/blog.github.io/tags/后端/" style="font-size: 10px;">后端</a> <a href="/blog.github.io/tags/工具/" style="font-size: 10px;">工具</a> <a href="/blog.github.io/tags/文学/" style="font-size: 10px;">文学</a> <a href="/blog.github.io/tags/文献/" style="font-size: 20px;">文献</a> <a href="/blog.github.io/tags/编程/" style="font-size: 10px;">编程</a> <a href="/blog.github.io/tags/脚本/" style="font-size: 20px;">脚本</a> <a href="/blog.github.io/tags/读书笔记/" style="font-size: 20px;">读书笔记</a> <a href="/blog.github.io/tags/高效办公/" style="font-size: 10px;">高效办公</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/blog.github.io/js/search.js"></script>
+<script src="/blog.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/blog.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/blog.github.io/js/animate.js"></script>
+
+
+  <script src="/blog.github.io/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>

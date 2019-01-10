@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>PHP笔记2 | RunnningAnt·黛玛</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="web, web前端,PHP,Javascript, 乒乓球, 书法, 编程">
+  
+  <meta name="description" content="运算符（operator） 是一种将数据进行运算的特殊符号，在PHP中有十种之多   赋值运算符： = $a=$b=$c=10;   // 连贯复制运算  算术运算符：加、减、 乘、除、取余运算（模运算）—整数 在进行除法运算和取余运算的时候，除数不能为零。  比较运算符：比较两个数据的大小，或者是内容是否相同 大于  &amp;gt; 小于  &amp;lt; 大于等于  &amp;gt;= 小于等于、  &amp;lt;=">
+<meta name="keywords" content="PHP,后端">
+<meta property="og:type" content="article">
+<meta property="og:title" content="PHP笔记2">
+<meta property="og:url" content="https://antrunning2019.github.io/blog.github.io/2019/01/01/2018-12-8 php入门2 004018/index.html">
+<meta property="og:site_name" content="RunnningAnt·黛玛">
+<meta property="og:description" content="运算符（operator） 是一种将数据进行运算的特殊符号，在PHP中有十种之多   赋值运算符： = $a=$b=$c=10;   // 连贯复制运算  算术运算符：加、减、 乘、除、取余运算（模运算）—整数 在进行除法运算和取余运算的时候，除数不能为零。  比较运算符：比较两个数据的大小，或者是内容是否相同 大于  &amp;gt; 小于  &amp;lt; 大于等于  &amp;gt;= 小于等于、  &amp;lt;=">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2019-01-10T08:51:28.306Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="PHP笔记2">
+<meta name="twitter:description" content="运算符（operator） 是一种将数据进行运算的特殊符号，在PHP中有十种之多   赋值运算符： = $a=$b=$c=10;   // 连贯复制运算  算术运算符：加、减、 乘、除、取余运算（模运算）—整数 在进行除法运算和取余运算的时候，除数不能为零。  比较运算符：比较两个数据的大小，或者是内容是否相同 大于  &amp;gt; 小于  &amp;lt; 大于等于  &amp;gt;= 小于等于、  &amp;lt;=">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog.github.io/css/style.css">
+  <script src="/blog.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/blog.github.io/" class="left">
+                    <span class="site-title">RunningAnt· 黛玛</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/blog.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/blog.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>文章</span>
+                    </a>
+                    
+                    <a href="/blog.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我们</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/blog.github.io/">
+                    <img src="/blog.github.io/images/logo.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        RunningAnt· 黛玛
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发和乒乓球技术的博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="RunningAnt" target="_blank" href="https://antrunning2019.github.io/blog.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/AntRunning2019">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/bjbssblog">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/luke06127845">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="Facebook" target="_blank" href="https://www.facebook.com/Luke.pung2019">
+                            <i class="fa fa-facebook fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-2018-12-8 php入门2 004018" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      PHP笔记2
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/blog.github.io/categories/program/">program</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-01
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="运算符（operator）"><a href="#运算符（operator）" class="headerlink" title="运算符（operator）"></a>运算符（operator）</h3><blockquote>
+<p>是一种将数据进行运算的特殊符号，在PHP中有十种之多</p>
+</blockquote>
+<ul>
+<li><p>赋值运算符： =</p>
+<p>$a=$b=$c=10;   // 连贯复制运算</p>
+</li>
+<li><p>算术运算符：加、减、 乘、除、取余运算（模运算）—整数</p>
+<p>在进行除法运算和取余运算的时候，除数不能为零。</p>
+</li>
+<li><p>比较运算符：比较两个数据的大小，或者是内容是否相同</p>
+<p>大于  &gt;</p>
+<p>小于  &lt;</p>
+<p>大于等于  &gt;=</p>
+<p>小于等于、  &lt;=</p>
+<p>等于    ==     左边与右边相同（大小相同）</p>
+<p>不等于、 !=    左边与右边不同（大小不同）</p>
+<p>全等于   ===，左边与右边相同，大小以及数据类型都相同</p>
+<p> 不全等于    !==    只有大小或类型不同   </p>
+</li>
+</ul>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">       <span class="comment">//判断相等</span></span><br><span class="line">       var_dump($a==$b);</span><br><span class="line">	<span class="comment">//判断全等</span></span><br><span class="line">       var_dump($a===$b);</span><br></pre></td></tr></table></figure>
+<h5 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h5><blockquote>
+<p>逻辑运算：针对不同的结果进行匹配</p>
+</blockquote>
+<p>&amp;&amp;  逻辑与（左右都满足返回true ，否则返回false）</p>
+<p>||   逻辑或（左右只有一个满足即可）</p>
+<p>！   逻辑非（对已有条件尽心取反）</p>
+<p>短路运算实现代码优化：（逻辑与和逻辑或）—出现概率高的放在第一位。</p>
+<h5 id="连接运算符"><a href="#连接运算符" class="headerlink" title="连接运算符"></a>连接运算符</h5><p>连接运算符：是PHP中</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?php</span></span><br><span class="line">       $a = <span class="string">'hello'</span>;</span><br><span class="line">	$b =<span class="number">123</span>;</span><br><span class="line">	<span class="comment">//将变量a和变量b连接起来</span></span><br><span class="line">	<span class="keyword">echo</span> $a . $b;</span><br><span class="line">	<span class="comment">//$a.=$b-----&gt;$a =$a.$b;</span></span><br><span class="line">	<span class="keyword">echo</span> $a.=$b;</span><br></pre></td></tr></table></figure>
+<h5 id="错误抑制符"><a href="#错误抑制符" class="headerlink" title="错误抑制符"></a>错误抑制符</h5><blockquote>
+<p>在PHP中有一些错误可以提前预知，但这些错误可能无法避免，但又不希望报错给用户看，可以使用错误抑制符来处理</p>
+</blockquote>
+<p>@  在可能出现错误的表达式前面使用@</p>
+<figure class="highlight php"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h5 id="三目运算符"><a href="#三目运算符" class="headerlink" title="三目运算符"></a>三目运算符</h5><p>语法格式：表达式1？表达式二：表达式三；</p>
+<p>​    可以嵌套**</p>
+<h5 id="自操作运算符"><a href="#自操作运算符" class="headerlink" title="自操作运算符"></a>自操作运算符</h5><p>++ 自增（前置自操作、后置自操作） </p>
+<p>– 自减</p>
+<p>如果不参与运算，++i和i++ 效果一样的，如果参与运算，就不一样（前置和后置）</p>
+<p>衍生符号：</p>
+<p>+=     $ a+=$b       $a=$a+$b</p>
+<p>-=    $ a-=$b       $a=$a-$b</p>
+<p><em>=    $ a</em>=$b       $a=$a*$b</p>
+<p>/=    $ a/=$b       $a=$a/$b</p>
+<p>%=   $ a%=$b       $a=$a%$b</p>
+<h4 id="计算机码"><a href="#计算机码" class="headerlink" title="计算机码"></a>计算机码</h4><p>左移运算：乘2的操作</p>
+<p>右移运输：除二操作（不完全正确），有可能出现小数</p>
+<p>运算符的优先级</p>
+<h3 id="流程控制"><a href="#流程控制" class="headerlink" title="流程控制"></a>流程控制</h3><hr>
+<p>顺序结构（代码从上往下依次执行）</p>
+<p>分支结构( 给定一个条件，同时有多种选择执行)</p>
+<p>循环结构  （在条件控制范围里，执行制定的代码块）</p>
+<ul>
+<li><p>分支结构</p>
+<ul>
+<li><p>PHP中分支结构有两种：if分支和switch分支</p>
+<p>–如果条件特别多才会是使用的嵌套，不宜有多层–</p>
+<p>if分支适用于所有的分支结构</p>
+</li>
+<li><p>switch分支、有一组情形，对于一个条件，通常有多个代码执行</p>
+<p>swicth( 条件表达式){</p>
+<p>​    case  值1：</p>
+<p>​        代码段；</p>
+<p>​    case  值2：</p>
+<p>​        代码段；</p>
+<p>case  值3：</p>
+<p>​        代码段；</p>
+<p>case  值4：</p>
+<p>​        代码段； break；</p>
+<p>default：</p>
+<p>​        //匹配失败后的代码</p>
+<p>。。。。。。。。。；</p>
+<p>break； </p>
+<p>}</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="文件包含"><a href="#文件包含" class="headerlink" title="文件包含"></a>文件包含</h4><p>include  包含文件</p>
+<p>includeonce   只包含一次</p>
+<p>Require  </p>
+<p>Requireonce </p>
+<h4 id="文件加载原理"><a href="#文件加载原理" class="headerlink" title="文件加载原理"></a>文件加载原理</h4><ol>
+<li><p>在文件加载include或require的时候，系统会自动的将包含文件中的代码相当于嵌入当前文件中。</p>
+</li>
+<li><p>加载位置：在哪加载，对应的文件中的代码嵌入的位置就是对应的include位置</p>
+</li>
+<li><p>在PHP中被包含的文件是单独进行编译的</p>
+<p>PHP代码执行流程：</p>
+<pre><code>1. 读取代码文件（PHP文件）
+2. 编译，将PHP代码转换成字节码，生成opcode
+3. zendengine来解析opcode，按照字节码进行了逻辑运算
+4. 转换成对应的HTML代码 
+</code></pre></li>
+</ol>
+<h4 id="Include和require的区别"><a href="#Include和require的区别" class="headerlink" title="Include和require的区别"></a>Include和require的区别</h4><p>include和includeonce的区别</p>
+<p>​    include系统碰到一次，执行一次；如果对一个文件多次加载，系统会多次加载。</p>
+<p>​    includeonce只会加载一次。</p>
+<p>require和include的区别：包含不到文件的时候，报错的形式不一样。</p>
+<p>include的错误级别较轻；</p>
+<p>require如果有错，后面的代码不在执行。Fatal  error；没有包含的文件。</p>
+<h4 id="文件加载的路径问题"><a href="#文件加载的路径问题" class="headerlink" title="文件加载的路径问题"></a>文件加载的路径问题</h4><p>文件加载的时候需要指定文件路径才能保证PHP正确的找到对应文件</p>
+<p>文件加载的路径包含两大类：</p>
+<ul>
+<li><p>绝对路径：</p>
+<p>​    从磁盘的根目录开始（本地绝对路径</p>
+<p>​    从网站的根目录开始（网络绝对路径）</p>
+<p>​    Windows：盘符 C：/路径/PHP文件</p>
+<p>​    Linux:  /路径/PHP</p>
+<p>​    从网站根目录开始（网络绝对路径）</p>
+<p>​    /: 相对于网站主机名对应的路径</p>
+</li>
+<li><p>相对路径：从当前文件目录开始的路径</p>
+<p>​    .|  ./   表示当前文件夹</p>
+<p>​    ../        上级目录（当前文件夹的上层文件夹）</p>
+</li>
+<li><p>绝对路径和相对路径加载的区别：</p>
+<ul>
+<li>绝对路径相对效率偏低，但是相对安全</li>
+</ul>
+</li>
+</ul>
+
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年01月10日 16:51</p>
+        <p>原始链接： <a class="post-url" href="/blog.github.io/2019/01/01/2018-12-8 php入门2 004018/" title="PHP笔记2">https://antrunning2019.github.io/blog.github.io/2019/01/01/2018-12-8 php入门2 004018/</a></p>
+        <footer>
+            <a href="https://antrunning2019.github.io/blog.github.io">
+                <img src="/blog.github.io/images/logo.jpg" alt="AntRunning2019">
+                AntRunning2019
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog.github.io/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/blog.github.io/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/blog.github.io/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/blog.github.io/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/blog.github.io/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://antrunning2019.github.io/blog.github.io/2019/01/01/2018-12-8 php入门2 004018/&title=《PHP笔记2》 — RunnningAnt·黛玛&pic=/images/php2.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://antrunning2019.github.io/blog.github.io/2019/01/01/2018-12-8 php入门2 004018/&title=《PHP笔记2》 — RunnningAnt·黛玛&source=web, web前端,PHP,Javascript, 乒乓球, 书法, 编程" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://antrunning2019.github.io/blog.github.io/2019/01/01/2018-12-8 php入门2 004018/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《PHP笔记2》 — RunnningAnt·黛玛&url=https://antrunning2019.github.io/blog.github.io/2019/01/01/2018-12-8 php入门2 004018/&via=https://antrunning2019.github.io/blog.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://antrunning2019.github.io/blog.github.io/2019/01/01/2018-12-8 php入门2 004018/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://antrunning2019.github.io/blog.github.io/2019/01/01/2018-12-8 php入门2 004018/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/blog.github.io/tags/PHP/" class="color4">PHP</a>
+      
+    <a href="/blog.github.io/tags/后端/" class="color3">后端</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#运算符（operator）"><span class="post-toc-text">运算符（operator）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#逻辑运算符"><span class="post-toc-text">逻辑运算符</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#连接运算符"><span class="post-toc-text">连接运算符</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#错误抑制符"><span class="post-toc-text">错误抑制符</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#三目运算符"><span class="post-toc-text">三目运算符</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#自操作运算符"><span class="post-toc-text">自操作运算符</span></a></li></ol></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#计算机码"><span class="post-toc-text">计算机码</span></a></li></ol><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#流程控制"><span class="post-toc-text">流程控制</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件包含"><span class="post-toc-text">文件包含</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件加载原理"><span class="post-toc-text">文件加载原理</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#Include和require的区别"><span class="post-toc-text">Include和require的区别</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#文件加载的路径问题"><span class="post-toc-text">文件加载的路径问题</span></a></li></ol></li>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+    <a href="/blog.github.io/2019/01/01/2018-11-16 PHP学习笔记（听课版） 114158/" id="article-nav-newer" class="article-nav-link-wrap">
+
+      <span class="article-nav-title">
+        <i class="fa fa-hand-o-left" aria-hidden="true"></i>
+        
+          PHP学习笔记（听课版)
+        
+      </span>
+    </a>
+  
+  
+</nav>
+
+
+
+    
+        <div id="SOHUCS" sid="2018-12-8 php入门2 004018"></div>
+<script type="text/javascript">
+    (function(){
+        var appid = 'cyu1DBlNQ';
+        var conf = '7bc3c46aa7a8348dad98b41b6bd1e397';
+        var width = window.innerWidth || document.documentElement.clientWidth;
+        if (width < 960) {
+            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 AntRunning2019<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://antrunning2019.github.io/blog.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/blog.github.io/categories/article/">article</a><a class="category-link" href="/blog.github.io/categories/program/">program</a><a class="category-link" href="/blog.github.io/categories/tool/">tool</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/blog.github.io/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/blog.github.io/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/blog.github.io/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/blog.github.io/tags/函数/" style="font-size: 10px;">函数</a> <a href="/blog.github.io/tags/前端/" style="font-size: 10px;">前端</a> <a href="/blog.github.io/tags/历史/" style="font-size: 10px;">历史</a> <a href="/blog.github.io/tags/后端/" style="font-size: 10px;">后端</a> <a href="/blog.github.io/tags/工具/" style="font-size: 10px;">工具</a> <a href="/blog.github.io/tags/文学/" style="font-size: 10px;">文学</a> <a href="/blog.github.io/tags/文献/" style="font-size: 20px;">文献</a> <a href="/blog.github.io/tags/编程/" style="font-size: 10px;">编程</a> <a href="/blog.github.io/tags/脚本/" style="font-size: 20px;">脚本</a> <a href="/blog.github.io/tags/读书笔记/" style="font-size: 20px;">读书笔记</a> <a href="/blog.github.io/tags/高效办公/" style="font-size: 10px;">高效办公</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/blog.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/blog.github.io/archives">
+                    <i class="fa fa-archive"></i><span>文章</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/blog.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我们</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/blog.github.io/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/blog.github.io/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/blog.github.io/tags/PHP/" style="font-size: 20px;">PHP</a> <a href="/blog.github.io/tags/函数/" style="font-size: 10px;">函数</a> <a href="/blog.github.io/tags/前端/" style="font-size: 10px;">前端</a> <a href="/blog.github.io/tags/历史/" style="font-size: 10px;">历史</a> <a href="/blog.github.io/tags/后端/" style="font-size: 10px;">后端</a> <a href="/blog.github.io/tags/工具/" style="font-size: 10px;">工具</a> <a href="/blog.github.io/tags/文学/" style="font-size: 10px;">文学</a> <a href="/blog.github.io/tags/文献/" style="font-size: 20px;">文献</a> <a href="/blog.github.io/tags/编程/" style="font-size: 10px;">编程</a> <a href="/blog.github.io/tags/脚本/" style="font-size: 20px;">脚本</a> <a href="/blog.github.io/tags/读书笔记/" style="font-size: 20px;">读书笔记</a> <a href="/blog.github.io/tags/高效办公/" style="font-size: 10px;">高效办公</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/blog.github.io/js/search.js"></script>
+<script src="/blog.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/blog.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/blog.github.io/js/animate.js"></script>
+
+
+  <script src="/blog.github.io/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
