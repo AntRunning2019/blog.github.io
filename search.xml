@@ -54,6 +54,9 @@
     <title><![CDATA[JavaScript学习笔记一]]></title>
     <url>%2Fblog.github.io%2F2019%2F01%2F06%2F2018-11-26%20JS%E5%AD%A6%E4%B9%A0%20201414%2F</url>
     <content type="text"><![CDATA[JavaScrip 简介一、 JavaScript历史网景公司程序员Brendan Eich 两周之内设计出JavaScript这门语言。 二、 ECMAScript ECMAScript：是一种语言标准，JavaScript诞生后微软开发了JSscript，为了让JavaScript成为全球标准，几个公司联合ECMA(European Computer Manufaturers Association)组织定制了JavaScript语言标准，被称为ECMAScript标准。 三、JavaScript的版本​ 最新版ECMAScript6标准（简称ES6），在2015年6月正式发布。 四、快速入门 Javascript代码可以直接嵌入到网页的任何一个地方，不过我们通常是把它放在标签中。 123456789&lt;html&gt;&lt;head&gt; &lt;script&gt; alert('Hello, world'); &lt;/script&gt;&lt;/head&gt;&lt;body&gt;&lt;/body&gt;&lt;/html&gt; 第二种方法：把JavaScript代码放在一个单独的.js文件中，然后HTML通过在head标签中加如下代码引入， 123456789// &lt;script src=""&gt;&lt;/script&gt;&lt;html&gt;&lt;head&gt; &lt;script src="/static/js/abc.js"&gt;&lt;/script&gt;&lt;/head&gt;&lt;body&gt; ...&lt;/body&gt;&lt;/html&gt;]]></content>
+      <categories>
+        <category>program</category>
+      </categories>
       <tags>
         <tag>Javascript</tag>
         <tag>脚本</tag>
