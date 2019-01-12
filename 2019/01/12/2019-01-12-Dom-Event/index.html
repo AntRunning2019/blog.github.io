@@ -16,7 +16,7 @@
 <meta property="og:site_name" content="RunnningAnt·黛玛">
 <meta property="og:description" content="Dom操作–事件  js的核心：根据事件来修改标签的属性值  常用的事件：  onmouseover    当鼠标悬停的时候 onmouseout     当鼠标离开的时候 onmouseup      当鼠标松开的时候 onmousedown    当鼠标按下的时候 onmousemove    当鼠标移动的时候 onclick        点击事件 ondblclick     双击事件 o">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-01-12T16:16:44.935Z">
+<meta property="og:updated_time" content="2019-01-12T16:25:28.652Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Dom总结（三）Dom操作--事件">
 <meta name="twitter:description" content="Dom操作–事件  js的核心：根据事件来修改标签的属性值  常用的事件：  onmouseover    当鼠标悬停的时候 onmouseout     当鼠标离开的时候 onmouseup      当鼠标松开的时候 onmousedown    当鼠标按下的时候 onmousemove    当鼠标移动的时候 onclick        点击事件 ondblclick     双击事件 o">
@@ -185,18 +185,18 @@
 <li><p><strong>事件</strong>      ev (主流) 和 window.event</p>
 <p>   <strong><em>兼容写法</em></strong>  </p>
 <p>   ​    var oEvent =  ev ||window.event</p>
-<pre><code>***事件源对象***
-</code></pre><p>   ​             srcElement  (谷歌和IE)<br>   ​             target    （火狐专用） oEvent.clientY</p>
-<pre><code>***获取鼠标的 x 和 y 坐标***   
-</code></pre>   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(oEvent.clientX , oEvent.clientY);</span><br></pre></td></tr></table></figure>
+<p>   <strong><em>事件源对象</em></strong></p>
+<p>   ​             srcElement  (谷歌和IE)<br>   ​             target    （火狐专用） oEvent.clientY</p>
+<p>   <strong><em>获取鼠标的 x 和 y 坐标</em></strong></p>
+   <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(oEvent.clientX , oEvent.clientY);</span><br></pre></td></tr></table></figure>
 <p>   <strong><em>事件冒泡/取消事件冒泡</em></strong></p>
    <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oEvent = ev ||<span class="built_in">window</span>.event;  <span class="comment">//(window 可以省略不写)</span></span><br><span class="line">oEvent.cancelBubble = <span class="literal">true</span>；</span><br></pre></td></tr></table></figure>
 </li>
 </ol>
 </li>
 <li><p><strong>超链接和点击事件同时触发</strong></p>
-<pre><code>阻止默认的行为不去相应， 只影响自己添加的事件
-</code></pre><ul>
+<p> 阻止默认的行为不去相应， 只影响自己添加的事件</p>
+<ul>
 <li>return false ： 函数中的return false   然后 onclick 中的 return demo()</li>
 <li>oEvent.preventDefault()   （无论是针对普通事件还是绑定的事件都管用）  主流浏览器支持</li>
 </ul>
@@ -209,7 +209,7 @@
 
             <div class="post-copyright">
     <div class="content">
-        <p>最后更新： 2019年01月13日 00:16</p>
+        <p>最后更新： 2019年01月13日 00:25</p>
         <p>原始链接： <a class="post-url" href="/blog.github.io/2019/01/12/2019-01-12-Dom-Event/" title="Dom总结（三）Dom操作--事件">https://antrunning2019.github.io/blog.github.io/2019/01/12/2019-01-12-Dom-Event/</a></p>
         <footer>
             <a href="https://antrunning2019.github.io/blog.github.io">
