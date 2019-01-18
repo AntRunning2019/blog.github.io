@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="utf-8">
+  
+  <title>Js应用-自动播放选项卡 | RunnningAnt·黛玛</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  
+    <meta name="keywords" content="web, web前端,PHP,Javascript, 乒乓球, 书法, 编程">
+  
+  <meta name="description" content="Javascript应用（2） 一、 自动播放选项卡1.实现思路： 首先实现选项卡功能 加上定时器，和上一个，下一个按钮，实现自动功能（鼠标移动到上面就会暂停，鼠标移开自动播放）  2.实现选项卡中的注意事项和思路 获取中间五个button，并建立一个空数组，放在建好的空数组中  1234567// 获取中间所有的buttonvar aButton = document.getElementsBy">
+<meta name="keywords" content="前端,Javascript,脚本">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Js应用-自动播放选项卡">
+<meta property="og:url" content="https://antrunning2019.github.io/blog.github.io/2019/01/18/Js-Application2/index.html">
+<meta property="og:site_name" content="RunnningAnt·黛玛">
+<meta property="og:description" content="Javascript应用（2） 一、 自动播放选项卡1.实现思路： 首先实现选项卡功能 加上定时器，和上一个，下一个按钮，实现自动功能（鼠标移动到上面就会暂停，鼠标移开自动播放）  2.实现选项卡中的注意事项和思路 获取中间五个button，并建立一个空数组，放在建好的空数组中  1234567// 获取中间所有的buttonvar aButton = document.getElementsBy">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/blog.github.io/2019/01/18/Js-Application2/admin/GitHub/blog2/blog/source/_posts/Js-Application2/1.gif">
+<meta property="og:image" content="https://antrunning2019.github.io/blog.github.io/blog.github.io/2019/01/18/Js-Application2/admin/GitHub/blog2/blog/source/_posts/Js-Application2/2.gif">
+<meta property="og:updated_time" content="2019-01-18T00:57:52.279Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Js应用-自动播放选项卡">
+<meta name="twitter:description" content="Javascript应用（2） 一、 自动播放选项卡1.实现思路： 首先实现选项卡功能 加上定时器，和上一个，下一个按钮，实现自动功能（鼠标移动到上面就会暂停，鼠标移开自动播放）  2.实现选项卡中的注意事项和思路 获取中间五个button，并建立一个空数组，放在建好的空数组中  1234567// 获取中间所有的buttonvar aButton = document.getElementsBy">
+<meta name="twitter:image" content="https://antrunning2019.github.io/blog.github.io/blog.github.io/2019/01/18/Js-Application2/admin/GitHub/blog2/blog/source/_posts/Js-Application2/1.gif">
+  
+  
+    <link rel="icon" href="/favicon.ico">
+  
+  <link href="//cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="/blog.github.io/css/style.css">
+  <script src="/blog.github.io/js/pace.min.js"></script>
+  
+
+  
+  
+
+</head>
+</html>
+<body>
+  <div id="container">
+      <header id="header">
+    <div id="banner"></div>
+    <div id="header-outer">
+        <div id="header-menu" class="header-menu-pos animated">
+            <div class="header-menu-container">
+                <a href="/blog.github.io/" class="left">
+                    <span class="site-title">RunningAnt· 黛玛</span>
+                </a>
+                <nav id="header-menu-nav" class="right">
+                    
+                    <a href="/blog.github.io/">
+                        <i class="fa fa-home"></i>
+                        <span>首页</span>
+                    </a>
+                    
+                    <a href="/blog.github.io/archives">
+                        <i class="fa fa-archive"></i>
+                        <span>文章</span>
+                    </a>
+                    
+                    <a href="/blog.github.io/about">
+                        <i class="fa fa-user"></i>
+                        <span>关于我们</span>
+                    </a>
+                    
+                </nav>
+                <a class="mobile-header-menu-button">
+                    <i class="fa fa-bars"></i>
+                </a>
+            </div>
+        </div>
+        <div id="header-row">
+            <div id="logo">
+                <a href="/blog.github.io/">
+                    <img src="/blog.github.io/images/logo.jpg" alt="logo">
+                </a>
+            </div>
+            <div class="header-info">
+                <div id="header-title">
+                    
+                    <h2>
+                        RunningAnt· 黛玛
+                    </h2>
+                    
+                </div>
+                <div id="header-description">
+                    
+                    <h3>
+                        一个专注 WEB 开发和乒乓球技术的博客
+                    </h3>
+                    
+                </div>
+            </div>
+            <nav class="header-nav">
+                <div class="social">
+                    
+                        <a title="RunningAnt" target="_blank" href="https://antrunning2019.github.io/blog.github.io/">
+                            <i class="fa fa-home fa-2x"></i></a>
+                    
+                        <a title="Github" target="_blank" href="https://github.com/AntRunning2019">
+                            <i class="fa fa-github fa-2x"></i></a>
+                    
+                        <a title="Weibo" target="_blank" href="https://weibo.com/bjbssblog">
+                            <i class="fa fa-weibo fa-2x"></i></a>
+                    
+                        <a title="Twitter" target="_blank" href="//twitter.com/luke06127845">
+                            <i class="fa fa-twitter fa-2x"></i></a>
+                    
+                        <a title="Facebook" target="_blank" href="https://www.facebook.com/Luke.pung2019">
+                            <i class="fa fa-facebook fa-2x"></i></a>
+                    
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>
+      <div class="outer">
+        <section id="main" class="body-wrap"><article id="post-Js-Application2" class="article article-type-post" itemscope="" itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="post-title" itemprop="name">
+      Js应用-自动播放选项卡
+    </h1>
+    <div class="post-title-bar">
+      <ul>
+          
+              <li>
+                  <i class="fa fa-book"></i>
+                  
+                      <a href="/blog.github.io/categories/program/">program</a>
+                  
+              </li>
+          
+        <li>
+          <i class="fa fa-calendar"></i>  2019-01-18
+        </li>
+        <li>
+          <i class="fa fa-eye"></i>
+          <span id="busuanzi_value_page_pv"></span>
+        </li>
+      </ul>
+    </div>
+  
+
+          
+      </header>
+    
+    <div class="article-entry post-content" itemprop="articleBody">
+      
+            
+            <h3 id="Javascript应用（2）"><a href="#Javascript应用（2）" class="headerlink" title="Javascript应用（2）"></a>Javascript应用（2）</h3><hr>
+<h4 id="一、-自动播放选项卡"><a href="#一、-自动播放选项卡" class="headerlink" title="一、 自动播放选项卡"></a>一、 自动播放选项卡</h4><h5 id="1-实现思路："><a href="#1-实现思路：" class="headerlink" title="1.实现思路："></a>1.实现思路：</h5><ul>
+<li>首先实现选项卡功能<img src="/blog.github.io/blog.github.io/2019/01/18/Js-Application2/admin\GitHub\blog2\blog\source\_posts\Js-Application2\1.gif" alt="1"></li>
+<li>加上定时器，和上一个，下一个按钮，实现自动功能（鼠标移动到上面就会暂停，鼠标移开自动播放）<img src="/blog.github.io/blog.github.io/2019/01/18/Js-Application2/admin\GitHub\blog2\blog\source\_posts\Js-Application2\2.gif" alt="2"></li>
+</ul>
+<h5 id="2-实现选项卡中的注意事项和思路"><a href="#2-实现选项卡中的注意事项和思路" class="headerlink" title="2.实现选项卡中的注意事项和思路"></a>2.实现选项卡中的注意事项和思路</h5><ul>
+<li>获取中间五个button，并建立一个空数组，放在建好的空数组中</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 获取中间所有的button</span></span><br><span class="line"><span class="keyword">var</span> aButton = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'button'</span>);</span><br><span class="line"><span class="comment">// 定义一个空数组，存放中间所有的按钮</span></span><br><span class="line"><span class="keyword">var</span> aBtn = [];</span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; aButton.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">    aBtn.push(aButton[i]);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>获取所有的box中的div</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oBox = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</span><br><span class="line"><span class="keyword">var</span> aDiv = oBox.getElementsByTagName(<span class="string">'div'</span>);</span><br></pre></td></tr></table></figure>
+<ul>
+<li>实现切换功能的算法为：首先在点击的时候使用匿名函数清空oBox和aDiv的class，然后给点击的对应的div添加class</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 将所有的div和button的样式全部清空</span></span><br><span class="line">aBtn[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; aBtn.length; j++) &#123;</span><br><span class="line">        aBtn[j].className = <span class="string">''</span>;</span><br><span class="line">        aDiv[j].className = <span class="string">''</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 给当前的button和div添加class</span></span><br><span class="line">    <span class="keyword">this</span>.className = <span class="string">'active'</span>;</span><br><span class="line">    aDiv[<span class="keyword">this</span>.index].className = <span class="string">'show'</span>;</span><br><span class="line">    <span class="comment">// aDiv[i].className = 'show';</span></span><br></pre></td></tr></table></figure>
+<h5 id="3、-实现选项卡的完整代码"><a href="#3、-实现选项卡的完整代码" class="headerlink" title="3、 实现选项卡的完整代码"></a>3、 实现选项卡的完整代码</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>自动播放选项卡<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .box &#123;</span></span><br><span class="line"><span class="undefined">            width: 1050px;</span></span><br><span class="line"><span class="undefined">            border: 1px solid red;</span></span><br><span class="line"><span class="undefined">            margin: 0 auto;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .box button &#123;</span></span><br><span class="line"><span class="undefined">            width: 120px;</span></span><br><span class="line"><span class="undefined">            height: 50px;</span></span><br><span class="line"><span class="undefined">            margin-top: 20px;</span></span><br><span class="line"><span class="undefined">            font-size: 20px;</span></span><br><span class="line"><span class="undefined">            margin-left: 15px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .box div &#123;</span></span><br><span class="line"><span class="undefined">            margin-top: 20px;</span></span><br><span class="line"><span class="undefined">            width: 1050px;</span></span><br><span class="line"><span class="undefined">            height: 500px;</span></span><br><span class="line"><span class="undefined">            font-size: 40px;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="undefined">            background-color: pink;</span></span><br><span class="line"><span class="undefined">            display: none;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .box .show &#123;</span></span><br><span class="line"><span class="undefined">            display: block;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .box .active &#123;</span></span><br><span class="line"><span class="undefined">            width: 140px;</span></span><br><span class="line"><span class="undefined">            background-color: tomato;</span></span><br><span class="line"><span class="undefined">            color: white;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    &lt;button&gt;&lt;-&lt;/button&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span>周杰伦<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>林俊杰<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>刘德华<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>张学友<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>陈奕迅<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>-&gt;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"show"</span>&gt;</span>双节棍、千里之外、七里香<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>曹操、豆浆油条、江南<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>爱你一万年、冰雨、男人哭吧不是罪<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>吻别、 情书、饿狼传说<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>十年、爱情呼叫转移、浮夸<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 获取中间所有的button</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> aButton = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'button'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 定义一个空数组，存放中间所有的按钮</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> aBtn = [];</span></span><br><span class="line"><span class="javascript">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; aButton.length - <span class="number">1</span>; i++) &#123;</span></span><br><span class="line"><span class="undefined">        aBtn.push(aButton[i]);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 获取所有的div</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> oBox = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> aDiv = oBox.getElementsByTagName(<span class="string">'div'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 给所有的button添加点击事件</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; aBtn.length; i++) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 将当前的i值保存到自定义的属性中</span></span></span><br><span class="line"><span class="undefined">        aBtn[i].index = i;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 将所有的div和button的样式全部清空</span></span></span><br><span class="line"><span class="javascript">        aBtn[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; aBtn.length; j++) &#123;</span></span><br><span class="line"><span class="javascript">                aBtn[j].className = <span class="string">''</span>;</span></span><br><span class="line"><span class="javascript">                aDiv[j].className = <span class="string">''</span>;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// 给当前的button和div添加class</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.className = <span class="string">'active'</span>;</span></span><br><span class="line"><span class="javascript">            aDiv[<span class="keyword">this</span>.index].className = <span class="string">'show'</span>;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// aDiv[i].className = 'show';</span></span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<ol start="4">
+<li><h5 id="实现上一个下一个按钮功能"><a href="#实现上一个下一个按钮功能" class="headerlink" title="实现上一个下一个按钮功能"></a>实现上一个下一个按钮功能</h5></li>
+</ol>
+<ul>
+<li>首先获取第一个和最后一个button</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> oPre = aButton[<span class="number">0</span>];</span><br><span class="line"><span class="keyword">var</span> oNext = aButton[aButton.length - <span class="number">1</span>];</span><br></pre></td></tr></table></figure>
+<ul>
+<li>定义一个全局变量number记录点击按钮和div的位置</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> number = <span class="number">0</span>; <span class="comment">//记录当前显示的哪个按钮和div</span></span><br></pre></td></tr></table></figure>
+<ul>
+<li>定义一个添加类的函数addName</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">addName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; aBtn.length; i++) &#123;</span><br><span class="line">        aBtn[i].className = <span class="string">''</span>;</span><br><span class="line">        aDiv[i].className = <span class="string">''</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    aBtn[number].className = <span class="string">'active'</span>;</span><br><span class="line">    aDiv[number].className = <span class="string">'show'</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>给第一个和最后一个按钮添加点击事件</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 添加事件</span></span><br><span class="line">oPre.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    number--;</span><br><span class="line">    <span class="keyword">if</span> (number === <span class="number">-1</span>) &#123;</span><br><span class="line">        number = aBtn.length - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    addName();</span><br><span class="line">&#125;;</span><br><span class="line">oNext.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    number++;</span><br><span class="line">    <span class="keyword">if</span> (number === aBtn.length) &#123;</span><br><span class="line">        number = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    addName();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>第二阶段完整代码（到此已经可以手动操作选项卡了）</li>
+</ul>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line">&lt;!DOCTYPE html&gt;</span><br><span class="line">&lt;html lang=<span class="string">"en"</span>&gt;</span><br><span class="line">&lt;head&gt;</span><br><span class="line">    &lt;meta charset=<span class="string">"UTF-8"</span>&gt;</span><br><span class="line">    &lt;title&gt;自动播放选项卡&lt;<span class="regexp">/title&gt;</span></span><br><span class="line"><span class="regexp">    &lt;style&gt;</span></span><br><span class="line"><span class="regexp">        .box &#123;</span></span><br><span class="line"><span class="regexp">            width: 1050px;</span></span><br><span class="line"><span class="regexp">            border: 1px solid red;</span></span><br><span class="line"><span class="regexp">            margin: 0 auto;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        .box button &#123;</span></span><br><span class="line"><span class="regexp">            width: 120px;</span></span><br><span class="line"><span class="regexp">            height: 50px;</span></span><br><span class="line"><span class="regexp">            margin-top: 20px;</span></span><br><span class="line"><span class="regexp">            font-size: 20px;</span></span><br><span class="line"><span class="regexp">            margin-left: 15px;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        .box div &#123;</span></span><br><span class="line"><span class="regexp">            margin-top: 20px;</span></span><br><span class="line"><span class="regexp">            width: 1050px;</span></span><br><span class="line"><span class="regexp">            height: 500px;</span></span><br><span class="line"><span class="regexp">            font-size: 40px;</span></span><br><span class="line"><span class="regexp">            text-align: center;</span></span><br><span class="line"><span class="regexp">            background-color: pink;</span></span><br><span class="line"><span class="regexp">            display: none;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        .box .show &#123;</span></span><br><span class="line"><span class="regexp">            display: block;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        .box .active &#123;</span></span><br><span class="line"><span class="regexp">            width: 140px;</span></span><br><span class="line"><span class="regexp">            background-color: tomato;</span></span><br><span class="line"><span class="regexp">            color: white;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>style&gt;</span><br><span class="line">&lt;<span class="regexp">/head&gt;</span></span><br><span class="line"><span class="regexp">&lt;body&gt;</span></span><br><span class="line"><span class="regexp">&lt;div class="box" id="box"&gt;</span></span><br><span class="line"><span class="regexp">    &lt;button&gt;&lt;-&lt;/</span>button&gt;</span><br><span class="line">    &lt;button <span class="class"><span class="keyword">class</span></span>=<span class="string">"active"</span>&gt;周杰伦&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;button&gt;林俊杰&lt;/</span>button&gt;</span><br><span class="line">    &lt;button&gt;刘德华&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;button&gt;张学友&lt;/</span>button&gt;</span><br><span class="line">    &lt;button&gt;陈奕迅&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">    &lt;button&gt;-&gt;&lt;/</span>button&gt;</span><br><span class="line">    &lt;div <span class="class"><span class="keyword">class</span></span>=<span class="string">"show"</span>&gt;双节棍、千里之外、七里香&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;曹操、豆浆油条、江南&lt;/</span>div&gt;</span><br><span class="line">    &lt;div&gt;爱你一万年、冰雨、男人哭吧不是罪&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    &lt;div&gt;吻别、 情书、饿狼传说&lt;/</span>div&gt;</span><br><span class="line">    &lt;div&gt;十年、爱情呼叫转移、浮夸&lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>div&gt;</span><br><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="comment">// 获取中间所有的button</span></span><br><span class="line">    <span class="keyword">var</span> aButton = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'button'</span>);</span><br><span class="line">    <span class="comment">// 定义一个空数组，存放中间所有的按钮</span></span><br><span class="line">    <span class="keyword">var</span> number = <span class="number">0</span>; <span class="comment">//记录当前显示的哪个按钮和div</span></span><br><span class="line">    <span class="keyword">var</span> aBtn = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; aButton.length - <span class="number">1</span>; i++) &#123;</span><br><span class="line">        aBtn.push(aButton[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// 获取所有的div</span></span><br><span class="line">    <span class="keyword">var</span> oBox = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</span><br><span class="line">    <span class="keyword">var</span> aDiv = oBox.getElementsByTagName(<span class="string">'div'</span>);</span><br><span class="line">    <span class="comment">// 给所有的button添加点击事件</span></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; aBtn.length; i++) &#123;</span><br><span class="line">        <span class="comment">// 将当前的i值保存到自定义的属性中</span></span><br><span class="line">        aBtn[i].index = i;</span><br><span class="line">        <span class="comment">// 将所有的div和button的样式全部清空</span></span><br><span class="line">        aBtn[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; aBtn.length; j++) &#123;</span><br><span class="line">                aBtn[j].className = <span class="string">''</span>;</span><br><span class="line">                aDiv[j].className = <span class="string">''</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="comment">// 给当前的button和div添加class</span></span><br><span class="line">            <span class="keyword">this</span>.className = <span class="string">'active'</span>;</span><br><span class="line">            aDiv[<span class="keyword">this</span>.index].className = <span class="string">'show'</span>;</span><br><span class="line">            <span class="comment">// 更新number值</span></span><br><span class="line">            number = <span class="keyword">this</span>.index;</span><br><span class="line">        &#125;;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// 获取第一个和最后一个按钮</span></span><br><span class="line">    <span class="keyword">var</span> oPre = aButton[<span class="number">0</span>];</span><br><span class="line">    <span class="keyword">var</span> oNext = aButton[aButton.length - <span class="number">1</span>];</span><br><span class="line">    <span class="comment">// 添加事件</span></span><br><span class="line">    oPre.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        number--;</span><br><span class="line">        <span class="keyword">if</span> (number === <span class="number">-1</span>) &#123;</span><br><span class="line">            number = aBtn.length - <span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        addName();</span><br><span class="line">    &#125;;</span><br><span class="line">    oNext.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">        number++;</span><br><span class="line">        <span class="keyword">if</span> (number === aBtn.length) &#123;</span><br><span class="line">            number = <span class="number">0</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        addName();</span><br><span class="line">    &#125;;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">addName</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; aBtn.length; i++) &#123;</span><br><span class="line">            aBtn[i].className = <span class="string">''</span>;</span><br><span class="line">            aDiv[i].className = <span class="string">''</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        aBtn[number].className = <span class="string">'active'</span>;</span><br><span class="line">        aDiv[number].className = <span class="string">'show'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br><span class="line"><span class="regexp">&lt;/</span>body&gt;</span><br><span class="line">&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure>
+<h5 id="5-添加定时器，实现自动播放"><a href="#5-添加定时器，实现自动播放" class="headerlink" title="5.添加定时器，实现自动播放"></a>5.添加定时器，实现自动播放</h5><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 定义一个全局的定时器变量</span></span><br><span class="line"><span class="keyword">var</span> timer = <span class="literal">null</span>;</span><br><span class="line">timer = setInterval(next, <span class="number">1000</span>);</span><br><span class="line"><span class="comment">// 给box定义事件，oBox.onmouseover   ，oBox.onmouseout</span></span><br><span class="line">oBox.onmouseover = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    clearInterval(timer);</span><br><span class="line">&#125;</span><br><span class="line">oBox.onmouseout = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">    timer = setInterval(next, <span class="number">1000</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h5 id="6-demo的最终代码"><a href="#6-demo的最终代码" class="headerlink" title="6.demo的最终代码"></a>6.demo的最终代码</h5><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;!DOCTYPE html&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">html</span> <span class="attr">lang</span>=<span class="string">"en"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">head</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">meta</span> <span class="attr">charset</span>=<span class="string">"UTF-8"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">title</span>&gt;</span>自动播放选项卡<span class="tag">&lt;/<span class="name">title</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .box &#123;</span></span><br><span class="line"><span class="undefined">            width: 1050px;</span></span><br><span class="line"><span class="undefined">            border: 1px solid red;</span></span><br><span class="line"><span class="undefined">            margin: 0 auto;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .box button &#123;</span></span><br><span class="line"><span class="undefined">            width: 120px;</span></span><br><span class="line"><span class="undefined">            height: 50px;</span></span><br><span class="line"><span class="undefined">            margin-top: 20px;</span></span><br><span class="line"><span class="undefined">            font-size: 20px;</span></span><br><span class="line"><span class="undefined">            margin-left: 15px;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .box div &#123;</span></span><br><span class="line"><span class="undefined">            margin-top: 20px;</span></span><br><span class="line"><span class="undefined">            width: 1050px;</span></span><br><span class="line"><span class="undefined">            height: 500px;</span></span><br><span class="line"><span class="undefined">            font-size: 40px;</span></span><br><span class="line"><span class="undefined">            text-align: center;</span></span><br><span class="line"><span class="undefined">            background-color: pink;</span></span><br><span class="line"><span class="undefined">            display: none;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .box .show &#123;</span></span><br><span class="line"><span class="undefined">            display: block;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="undefined">        .box .active &#123;</span></span><br><span class="line"><span class="undefined">            width: 140px;</span></span><br><span class="line"><span class="undefined">            background-color: tomato;</span></span><br><span class="line"><span class="undefined">            color: white;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">    </span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">head</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span> <span class="attr">id</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">    &lt;button&gt;&lt;-&lt;/button&gt;</span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"active"</span>&gt;</span>周杰伦<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>林俊杰<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>刘德华<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>张学友<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>陈奕迅<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>-&gt;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"show"</span>&gt;</span>双节棍、千里之外、七里香<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>曹操、豆浆油条、江南<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>爱你一万年、冰雨、男人哭吧不是罪<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>吻别、 情书、饿狼传说<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>十年、爱情呼叫转移、浮夸<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 获取中间所有的button</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> aButton = <span class="built_in">document</span>.getElementsByTagName(<span class="string">'button'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 定义一个空数组，存放中间所有的按钮</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> number = <span class="number">0</span>; <span class="comment">//记录当前显示的哪个按钮和div</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> aBtn = [];</span></span><br><span class="line"><span class="javascript">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">1</span>; i &lt; aButton.length - <span class="number">1</span>; i++) &#123;</span></span><br><span class="line"><span class="undefined">        aBtn.push(aButton[i]);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 获取所有的div</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> oBox = <span class="built_in">document</span>.getElementById(<span class="string">'box'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> aDiv = oBox.getElementsByTagName(<span class="string">'div'</span>);</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 给所有的button添加点击事件</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; aBtn.length; i++) &#123;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 将当前的i值保存到自定义的属性中</span></span></span><br><span class="line"><span class="undefined">        aBtn[i].index = i;</span></span><br><span class="line"><span class="javascript">        <span class="comment">// 将所有的div和button的样式全部清空</span></span></span><br><span class="line"><span class="javascript">        aBtn[i].onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">for</span> (<span class="keyword">var</span> j = <span class="number">0</span>; j &lt; aBtn.length; j++) &#123;</span></span><br><span class="line"><span class="javascript">                aBtn[j].className = <span class="string">''</span>;</span></span><br><span class="line"><span class="javascript">                aDiv[j].className = <span class="string">''</span>;</span></span><br><span class="line"><span class="undefined">            &#125;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// 给当前的button和div添加class</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.className = <span class="string">'active'</span>;</span></span><br><span class="line"><span class="javascript">            aDiv[<span class="keyword">this</span>.index].className = <span class="string">'show'</span>;</span></span><br><span class="line"><span class="javascript">            <span class="comment">// 更新number值</span></span></span><br><span class="line"><span class="javascript">            number = <span class="keyword">this</span>.index;</span></span><br><span class="line"><span class="undefined">        &#125;;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 获取第一个和最后一个按钮</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> oPre = aButton[<span class="number">0</span>];</span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> oNext = aButton[aButton.length - <span class="number">1</span>];</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 添加事件</span></span></span><br><span class="line"><span class="javascript">    oPre.onclick = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">        number--;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (number === <span class="number">-1</span>) &#123;</span></span><br><span class="line"><span class="undefined">            number = aBtn.length - 1;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        addName();</span></span><br><span class="line"><span class="undefined">    &#125;;</span></span><br><span class="line"><span class="undefined">    oNext.onclick = next;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">next</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">        number++;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (number === aBtn.length) &#123;</span></span><br><span class="line"><span class="undefined">            number = 0;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="undefined">        addName();</span></span><br><span class="line"><span class="undefined">    &#125;;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="function"><span class="keyword">function</span> <span class="title">addName</span>(<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; aBtn.length; i++) &#123;</span></span><br><span class="line"><span class="javascript">            aBtn[i].className = <span class="string">''</span>;</span></span><br><span class="line"><span class="javascript">            aDiv[i].className = <span class="string">''</span>;</span></span><br><span class="line"><span class="undefined">        &#125;</span></span><br><span class="line"><span class="javascript">        aBtn[number].className = <span class="string">'active'</span>;</span></span><br><span class="line"><span class="javascript">        aDiv[number].className = <span class="string">'show'</span>;</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span></span><br><span class="line"><span class="javascript">    <span class="comment">// 定义一个全局的定时器变量</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">var</span> timer = <span class="literal">null</span>;</span></span><br><span class="line"><span class="undefined">    timer = setInterval(next, 1000);</span></span><br><span class="line"><span class="javascript">    <span class="comment">// 给box定义事件，oBox.onmouseover   ，oBox.onmouseout</span></span></span><br><span class="line"><span class="javascript">    oBox.onmouseover = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">        clearInterval(timer);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="javascript">    oBox.onmouseout = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span></span><br><span class="line"><span class="undefined">        timer = setInterval(next, 1000);</span></span><br><span class="line"><span class="undefined">    &#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">html</span>&gt;</span></span><br></pre></td></tr></table></figure>
+            <div class="post-copyright">
+    <div class="content">
+        <p>最后更新： 2019年01月18日 08:57</p>
+        <p>原始链接： <a class="post-url" href="/blog.github.io/2019/01/18/Js-Application2/" title="Js应用-自动播放选项卡">https://antrunning2019.github.io/blog.github.io/2019/01/18/Js-Application2/</a></p>
+        <footer>
+            <a href="https://antrunning2019.github.io/blog.github.io">
+                <img src="/blog.github.io/images/logo.jpg" alt="AntRunning2019">
+                AntRunning2019
+            </a>
+        </footer>
+    </div>
+</div>
+
+      
+        
+            
+<div class="page-reward">
+    <a id="rewardBtn" href="javascript:;">赏</a>
+</div>
+
+<div id="reward" class="post-modal reward-lay">
+    <a class="close" href="javascript:;" id="reward-close">×</a>
+    <span class="reward-title">
+        <i class="icon icon-quote-left"></i>
+        请我吃糖~
+        <i class="icon icon-quote-right"></i>
+    </span>
+    <div class="reward-content">
+        
+        <div class="reward-code">
+            <img id="rewardCode" src="/blog.github.io/images/wechat_code.jpg" alt="打赏二维码">
+        </div>
+        <div class="reward-select">
+            
+            <label class="reward-select-item checked" data-id="wechat" data-wechat="/blog.github.io/images/wechat_code.jpg">
+                <img class="reward-select-item-wechat" src="/blog.github.io/images/wechat.png" alt="微信">
+            </label>
+            
+            
+            <label class="reward-select-item" data-id="alipay" data-alipay="/blog.github.io/images/alipay_code.jpg">
+                <img class="reward-select-item-alipay" src="/blog.github.io/images/alipay.png" alt="支付宝">
+            </label>
+            
+        </div>
+    </div>
+</div>
+
+
+        
+    </div>
+    <footer class="article-footer">
+        
+        
+<div class="post-share">
+    <a href="javascript:;" id="share-sub" class="post-share-fab">
+        <i class="fa fa-share-alt"></i>
+    </a>
+    <div class="post-share-list" id="share-list">
+        <ul class="share-icons">
+          <li>
+            <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://antrunning2019.github.io/blog.github.io/2019/01/18/Js-Application2/&title=《Js应用-自动播放选项卡》 — RunnningAnt·黛玛&pic=/images/js2.jpg" data-title="微博">
+              <i class="fa fa-weibo"></i>
+            </a>
+          </li>
+          <li>
+            <a class="weixin share-sns" id="wxFab" href="javascript:;" data-title="微信">
+              <i class="fa fa-weixin"></i>
+            </a>
+          </li>
+          <li>
+            <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://antrunning2019.github.io/blog.github.io/2019/01/18/Js-Application2/&title=《Js应用-自动播放选项卡》 — RunnningAnt·黛玛&source=web, web前端,PHP,Javascript, 乒乓球, 书法, 编程" data-title="QQ">
+              <i class="fa fa-qq"></i>
+            </a>
+          </li>
+          <li>
+            <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://antrunning2019.github.io/blog.github.io/2019/01/18/Js-Application2/" data-title="Facebook">
+              <i class="fa fa-facebook"></i>
+            </a>
+          </li>
+          <li>
+            <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Js应用-自动播放选项卡》 — RunnningAnt·黛玛&url=https://antrunning2019.github.io/blog.github.io/2019/01/18/Js-Application2/&via=https://antrunning2019.github.io/blog.github.io" data-title="Twitter">
+              <i class="fa fa-twitter"></i>
+            </a>
+          </li>
+          <li>
+            <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://antrunning2019.github.io/blog.github.io/2019/01/18/Js-Application2/" data-title="Google+">
+              <i class="fa fa-google-plus"></i>
+            </a>
+          </li>
+        </ul>
+     </div>
+</div>
+<div class="post-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;" id="wxShare-close">×</a>
+    <p>扫一扫，分享到微信</p>
+    <img src="//api.qrserver.com/v1/create-qr-code/?data=https://antrunning2019.github.io/blog.github.io/2019/01/18/Js-Application2/" alt="微信分享二维码">
+</div>
+
+<div class="mask"></div>
+
+        
+        <ul class="article-footer-menu">
+            
+            
+  <li class="article-footer-tags">
+    <i class="fa fa-tags"></i>
+      
+    <a href="/blog.github.io/tags/前端/" class="color3">前端</a>
+      
+    <a href="/blog.github.io/tags/Javascript/" class="color1">Javascript</a>
+      
+    <a href="/blog.github.io/tags/脚本/" class="color3">脚本</a>
+      
+  </li>
+
+        </ul>
+        
+    </footer>
+  </div>
+</article>
+
+
+    <aside class="post-toc-pos post-toc-top" id="post-toc">
+        <nav class="post-toc-wrap">
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Javascript应用（2）"><span class="post-toc-text">Javascript应用（2）</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#一、-自动播放选项卡"><span class="post-toc-text">一、 自动播放选项卡</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#1-实现思路："><span class="post-toc-text">1.实现思路：</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#2-实现选项卡中的注意事项和思路"><span class="post-toc-text">2.实现选项卡中的注意事项和思路</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#3、-实现选项卡的完整代码"><span class="post-toc-text">3、 实现选项卡的完整代码</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#实现上一个下一个按钮功能"><span class="post-toc-text">实现上一个下一个按钮功能</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#5-添加定时器，实现自动播放"><span class="post-toc-text">5.添加定时器，实现自动播放</span></a></li><li class="post-toc-item post-toc-level-5"><a class="post-toc-link" href="#6-demo的最终代码"><span class="post-toc-text">6.demo的最终代码</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </aside>
+    
+
+<nav id="article-nav">
+  
+  
+    <a href="/blog.github.io/2019/01/17/ApplicationInstall/" id="article-nav-older" class="article-nav-link-wrap">
+      <span class="article-nav-title">常用的应用软件一览表</span>
+      <i class="fa fa-hand-o-right" aria-hidden="true"></i>
+    </a>
+  
+</nav>
+
+
+
+    
+        <div id="SOHUCS" sid="Js-Application2"></div>
+<script type="text/javascript">
+    (function(){
+        var appid = 'cyu1DBlNQ';
+        var conf = '7bc3c46aa7a8348dad98b41b6bd1e397';
+        var width = window.innerWidth || document.documentElement.clientWidth;
+        if (width < 960) {
+            window.document.write('<script id="changyan_mobile_js" charset="utf-8" type="text/javascript" src="https://changyan.sohu.com/upload/mobile/wap-js/changyan_mobile.js?client_id=' + appid + '&conf=' + conf + '"><\/script>'); } else { var loadJs=function(d,a){var c=document.getElementsByTagName("head")[0]||document.head||document.documentElement;var b=document.createElement("script");b.setAttribute("type","text/javascript");b.setAttribute("charset","UTF-8");b.setAttribute("src",d);if(typeof a==="function"){if(window.attachEvent){b.onreadystatechange=function(){var e=b.readyState;if(e==="loaded"||e==="complete"){b.onreadystatechange=null;a()}}}else{b.onload=a}}c.appendChild(b)};loadJs("https://changyan.sohu.com/upload/changyan.js",function(){window.changyan.api.config({appid:appid,conf:conf})}); } })(); </script>
+    
+</section>
+        
+      </div>
+      <footer id="footer">
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+<p>
+    <span id="busuanzi_container_site_uv" style="display:none">
+        总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style="display:none">
+        总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
+
+      <p>
+        Powered by  <a href="http://hexo.io/" target="_blank">Hexo</a>
+        Theme <a href="//github.com/wongminho/hexo-theme-miho" target="_blank">MiHo</a>
+      &copy; 2019 AntRunning2019<br>
+      </p>
+    </div>
+  </div>
+</footer>
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="//cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+<script>
+  var mihoConfig = {
+      root: "https://antrunning2019.github.io/blog.github.io",
+      animate: true,
+      isHome: false,
+      share: true,
+      reward: 1
+  }
+</script>
+<div class="sidebar">
+    <div id="sidebar-search" title="Search">
+        <i class="fa fa-search"></i>
+    </div>
+    <div id="sidebar-category" title="Categories">
+        <i class="fa fa-book"></i>
+    </div>
+    <div id="sidebar-tag" title="Tags">
+        <i class="fa fa-tags"></i>
+    </div>
+    <div id="sidebar-top">
+        <span class="sidebar-top-icon"><i class="fa fa-angle-up"></i></span>
+    </div>
+</div>
+<div class="sidebar-menu-box" id="sidebar-menu-box">
+    <div class="sidebar-menu-box-container">
+        <div id="sidebar-menu-box-categories">
+            <a class="category-link" href="/blog.github.io/categories/article/">article</a><a class="category-link" href="/blog.github.io/categories/program/">program</a><a class="category-link" href="/blog.github.io/categories/tool/">tool</a>
+        </div>
+        <div id="sidebar-menu-box-tags">
+            <a href="/blog.github.io/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/blog.github.io/tags/DOM操作/" style="font-size: 16.67px;">DOM操作</a> <a href="/blog.github.io/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/blog.github.io/tags/PHP/" style="font-size: 13.33px;">PHP</a> <a href="/blog.github.io/tags/函数/" style="font-size: 10px;">函数</a> <a href="/blog.github.io/tags/前端/" style="font-size: 16.67px;">前端</a> <a href="/blog.github.io/tags/历史/" style="font-size: 10px;">历史</a> <a href="/blog.github.io/tags/后端/" style="font-size: 10px;">后端</a> <a href="/blog.github.io/tags/工具/" style="font-size: 13.33px;">工具</a> <a href="/blog.github.io/tags/文学/" style="font-size: 10px;">文学</a> <a href="/blog.github.io/tags/文献/" style="font-size: 13.33px;">文献</a> <a href="/blog.github.io/tags/编程/" style="font-size: 10px;">编程</a> <a href="/blog.github.io/tags/脚本/" style="font-size: 20px;">脚本</a> <a href="/blog.github.io/tags/读书笔记/" style="font-size: 13.33px;">读书笔记</a> <a href="/blog.github.io/tags/高效办公/" style="font-size: 10px;">高效办公</a>
+        </div>
+    </div>
+    <a href="javascript:;" class="sidebar-menu-box-close">&times;</a>
+</div>
+<div class="mobile-header-menu-nav" id="mobile-header-menu-nav">
+    <div class="mobile-header-menu-container">
+        <span class="title">Menus</span>
+        <ul class="mobile-header-menu-navbar">
+            
+            <li>
+                <a href="/blog.github.io/">
+                    <i class="fa fa-home"></i><span>首页</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/blog.github.io/archives">
+                    <i class="fa fa-archive"></i><span>文章</span>
+                </a>
+            </li>
+            
+            <li>
+                <a href="/blog.github.io/about">
+                    <i class="fa fa-user"></i><span>关于我们</span>
+                </a>
+            </li>
+            
+        </ul>
+    </div>
+    <div class="mobile-header-tag-container">
+        <span class="title">Tags</span>
+        <div id="mobile-header-container-tags">
+            <a href="/blog.github.io/tags/C语言/" style="font-size: 10px;">C语言</a> <a href="/blog.github.io/tags/DOM操作/" style="font-size: 16.67px;">DOM操作</a> <a href="/blog.github.io/tags/Javascript/" style="font-size: 20px;">Javascript</a> <a href="/blog.github.io/tags/PHP/" style="font-size: 13.33px;">PHP</a> <a href="/blog.github.io/tags/函数/" style="font-size: 10px;">函数</a> <a href="/blog.github.io/tags/前端/" style="font-size: 16.67px;">前端</a> <a href="/blog.github.io/tags/历史/" style="font-size: 10px;">历史</a> <a href="/blog.github.io/tags/后端/" style="font-size: 10px;">后端</a> <a href="/blog.github.io/tags/工具/" style="font-size: 13.33px;">工具</a> <a href="/blog.github.io/tags/文学/" style="font-size: 10px;">文学</a> <a href="/blog.github.io/tags/文献/" style="font-size: 13.33px;">文献</a> <a href="/blog.github.io/tags/编程/" style="font-size: 10px;">编程</a> <a href="/blog.github.io/tags/脚本/" style="font-size: 20px;">脚本</a> <a href="/blog.github.io/tags/读书笔记/" style="font-size: 13.33px;">读书笔记</a> <a href="/blog.github.io/tags/高效办公/" style="font-size: 10px;">高效办公</a>
+        </div>
+    </div>
+</div>
+<div class="search-wrap">
+    <span class="search-close">&times;</span>
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+            <i class="icon icon-lg icon-chevron-left"></i>
+        </a>
+        <input class="search-field" placeholder="Search..." id="keywords">
+        <a id="search-submit" href="javascript:;">
+            <i class="fa fa-search"></i>
+        </a>
+    <div class="search-container" id="search-container">
+        <ul class="search-result" id="search-result">
+        </ul>
+    </div>
+</div>
+
+<div id="search-tpl">
+    <li class="search-result-item">
+        <a href="{url}" class="search-item-li">
+            <span class="search-item-li-title" title="{title}">{title}</span>
+        </a>
+    </li>
+</div>
+<script src="/blog.github.io/js/search.js"></script>
+<script src="/blog.github.io/js/main.js"></script>
+
+
+  <script src="//cdn.bootcss.com/particles.js/2.0.0/particles.min.js"></script>
+  <div id="particles"></div>
+  <script src="/blog.github.io/js/particles.js"></script>
+
+
+
+
+
+
+
+  <link rel="stylesheet" href="//cdn.bootcss.com/animate.css/3.5.0/animate.min.css">
+  <script src="//cdn.bootcss.com/scrollReveal.js/3.0.5/scrollreveal.js"></script>
+  <script src="/blog.github.io/js/animate.js"></script>
+
+
+  <script src="/blog.github.io/js/pop-img.js"></script>
+  <script>
+     $(".article-entry p img").popImg();
+  </script>
+
+  </div>
+</body>
+</html>
